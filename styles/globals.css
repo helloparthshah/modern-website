@@ -55,7 +55,8 @@
 }
 
 .home h1,
-.blogs>h1 {
+.blogs>h1,
+.topbar h1 {
   font-family: 'Audiowide', cursive;
 }
 
@@ -128,7 +129,7 @@
   }
 
   .blog-content {
-    width: 100%!important;
+    width: 100% !important;
   }
 
   .hello {
