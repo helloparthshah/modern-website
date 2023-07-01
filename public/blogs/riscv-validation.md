@@ -2,13 +2,12 @@
 date: 06/30/2023
 title: "Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study"
 tags:
-- harshil
-- shaadi.com
-- divya
+- gem5
+- hardware
+- riscv
 authors:
   - Kunal Pai
   - Jasonbhai Citruswala
-image: /images/maa-ka-hahsiru.png
 ---
 
 # Validating Hardware and SimPoints with gem5: A RISC-V Board Case Study

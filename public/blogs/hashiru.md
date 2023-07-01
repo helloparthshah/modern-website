@@ -1,14 +1,13 @@
 ---
 date: 06/29/2023
-title: Hashiru finally proposes to Divya
+title: Hashiru writes correct spellings for the first time!
 tags:
 - harshil
-- shaadi.com
-- divya
+- hashiru
+- spelling
 authors:
   - Harshil Patel
   - Kunal Pai
-image: /images/maa-ka-hahsiru.png
 ---
 [<img src="https://raw.githubusercontent.com/firebase/flutterfire/master/resources/flutter_favorite.png" width="200" />](https://flutter.dev/docs/development/packages-and-plugins/favorites)
 
