@@ -12,7 +12,8 @@
             "Python"
         ],
         "links": {
-            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
+            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+            "Demo": "https://resources.gem5.org/"
         },
         "image": "/images/gem5.webp"
     },
