@@ -123,6 +123,24 @@
 
 
 @media only screen and (max-width: 786px) {
+  .blog-tile-image {
+    display: none;
+  }
+
+  .blog-content {
+    width: 100%;
+  }
+
+  .hello {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hello>div:first-child {
+    width: 75%;
+  }
+
   .experience {
     flex-direction: column;
     height: unset;

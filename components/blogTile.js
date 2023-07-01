@@ -22,7 +22,7 @@ export default function BlogTile({ blog }) {
         <div className="blog-tile" key={blog.name}>
             <Link href={`/blogs/${blog.name}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Row>
-                    <Col className="w-50">
+                    <Col xs={6} className="blog-content">
                         <Row>
                             <h6 className="main-text-title-bold">
                                 {
@@ -79,7 +79,7 @@ export default function BlogTile({ blog }) {
                             </p>
                         </Row>
                     </Col>
-                    <Col>
+                    <Col className="blog-tile-image">
                         <Row className="justify-content-end w-100 h-100">
                             <div style={{ width: '60%', height: '100%', position: 'relative' }}>
                                 <Image
@@ -95,7 +95,7 @@ export default function BlogTile({ blog }) {
                     </Col>
                 </Row>
             </Link>
-        </div>
+        </div >
     )
 }
 

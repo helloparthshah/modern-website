@@ -53,7 +53,7 @@ export default function Home() {
             awards.map((award, index) => {
               return (
                 <Row key={index} className="mb-3">
-                  <Col xs={1} className="d-flex align-items-center">
+                  <Col xs={1} className="d-flex align-items-center" style={{ width: 'auto' }}>
                     <Image src={trophy} roundedCircle width={50} height={50} />
                   </Col>
                   <Col>
