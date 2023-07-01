@@ -11,6 +11,7 @@ import Image from "next/image";
 import trophy from '/public/images/trophy.png';
 import Publication from '@/components/publication';
 import Education from '@/components/education';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -58,6 +59,11 @@ export default function Home() {
                   <Col>
                     <div key={index}>
                       <h3>{award.title}</h3>
+                      <p>
+                        {award.link ? <Link href={award.link}>{award.position}</Link> :
+                          award.position
+                        }
+                      </p>
                       <span>{award.date}</span>
                     </div>
                   </Col>

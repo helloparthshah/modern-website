@@ -1,24 +1,36 @@
 [
     {
-        "title": "The Rizzly Bear",
-        "start": "Bachpan se",
-        "end": "Abhi tak",
-        "description": "I am the Rizzly Bear",
+        "title": "Gem5 Vision",
+        "start": "Jan 2023",
+        "end": "June 2023",
+        "description": "Improved the gem5 Resource Infrastructure by implementing advanced search functionality forresource discovery within the gem5 ecosystem.\nIntroduced a comprehensive resource categorization system, allowing users to access specific resource types based on theirrequirements.\nExpanded gem5’s database support by integrating various options, providing users with multiple choices for storing,retrieving, and managing resources.",
         "skills": [
-            "Rizz",
-            "Jizz"
+            "NextJS",
+            "ReactJS",
+            "MongoDB",
+            "JSON Schema",
+            "Python"
         ],
-        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "links": {
+            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
+        },
+        "image": "/images/gem5.webp"
     },
     {
-        "title": "Weed Bhai",
-        "start": "Bachpan se",
-        "end": "Abhi tak",
-        "description": "I am the Hashi Bear",
+        "title": "Stadia Wireless",
+        "start": "June 2022",
+        "end": "July 2022",
+        "description": "Allows the Google Stadia Controllerto be used wirelessly with the use of websockets.\nHas 450+ stars and has been featured on multiple articles including The Verge, Ars Technica, and Digital Trends.",
         "skills": [
-            "C",
-            "C++++"
+            "Python",
+            "JavaScript",
+            "WebSockets",
+            "Google Stadia"
         ],
-        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "links": {
+            "GitHub": "https://github.com/helloparthshah/StadiaWireless",
+            "The Verge": "https://www.theverge.com/2022/10/5/23388789/google-stadia-fans-controllers-wireless-hack-workaround"
+        },
+        "image": "/images/stadia.png"
     }
 ]

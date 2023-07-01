@@ -54,9 +54,14 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
                                         }
                                     </h6>
                                 </Row>
-                                <Row>
+                                <Row className="gap-2">
                                     {
-                                        experience.link ? <Button variant="outline-secondary" href={experience.link} target="_blank">Learn More</Button> : null
+                                        experience.links ? Object.keys(experience.links).map((key, index) => {
+                                            return (
+                                                <Button key={index} variant="outline-secondary" href={experience.links[key]} target="_blank">{key}</Button>
+                                            );
+                                        }
+                                        ) : null
                                     }
                                 </Row>
                             </Col>

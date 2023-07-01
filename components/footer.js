@@ -15,16 +15,16 @@ export default function Footer() {
         <Row className="h-100 w-75">
           <Col className="text-center primary d-flex flex-column h-100 pt-2 pb-2 gap-1 footer-col align-items-center">
             <span className="text-muted main-text-regular">Connect with Me</span>
-            <Link href="https://scholar.google.com/citations?hl=en&user=-0ZTuE4AAAAJ">
+            {/* <Link href="https://scholar.google.com/citations?hl=en&user=-0ZTuE4AAAAJ">
               Google Scholar
-            </Link>
-            <Link href="https://github.com/kunpai">
+            </Link> */}
+            <Link href="https://github.com/helloparthshah">
               GitHub
             </Link>
-            <Link href="https://www.linkedin.com/in/kunpai/">
+            <Link href="https://www.linkedin.com/in/helloparthshah/">
               LinkedIn
             </Link>
-            <Link href="https://www.instagram.com/datboikunalpai/">
+            <Link href="https://www.instagram.com/helloparthshah/">
               Instagram
             </Link>
           </Col>
