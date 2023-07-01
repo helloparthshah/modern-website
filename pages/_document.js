@@ -9,8 +9,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Kunal Pai</title>
-        <meta name="description" content="Kunal Pai's personal website." />
       </Head>
       <body>
         <Main />

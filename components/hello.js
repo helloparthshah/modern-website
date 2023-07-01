@@ -1,12 +1,12 @@
 import { Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
-
+import parth from '/public/images/parth.jpg';
 export default function Hello() {
   return (
     <Row className='mt-5 mb-5'>
       <Col xs={5}>
         <div className='animate'>
-          <Image src="/images/kunal.jpeg"
+          <Image src={parth} alt='Parth Shah'
             fill
             style={{ objectFit: 'cover' }}
           />
@@ -15,11 +15,12 @@ export default function Hello() {
       <Col className='d-flex justify-content-center flex-column ms-5'>
         <Row>
           <h1 className='name'>
-            Kunal Pai
+            Parth Shah
           </h1>
         </Row>
         <Row>
-          Welcome to Kunal Pai&apos;s portfolio website, where passion meets expertise in the realm of computer architecture and cutting-edge technologies. With a keen interest in open-source simulation, validation, known-good configurations, as well as machine learning and natural language processing, Kunal aims to push the boundaries of innovation and deliver impactful solutions.
+          Hello! I am a Software Engineer at Amazon.
+          I graduated from the University of California, Davis with a B.S. in Computer Science and Engineering.
         </Row>
         <Row className='mt-3'>
           <Col className='d-flex justify-content-center'>

@@ -1,18 +1,43 @@
 [
     {
-        "title": "Dean's List",
-        "date": "Fall 2019"
+        "title": "HackDavis",
+        "position": "Best Use of GitHub",
+        "date": "2023"
     },
     {
-        "title": "Dean's List",
-        "date": "Fall 2020"
+        "title": "Chevron",
+        "position": "Cheveron Scholars Award",
+        "link": "https://engineering.ucdavis.edu/news/2022-college-engineering-undergraduate-student-awards",
+        "date": "2022"
     },
     {
-        "title": "Dean's List",
-        "date": "Winter 2022"
+        "title": "SacHacks",
+        "position": "Best Local Hack",
+        "date": "2022"
     },
     {
-        "title": "Dean's List",
-        "date": "Spring 2022"
+        "title": "HackDavis",
+        "position": "1st",
+        "date": "2022"
+    },
+    {
+        "title": "HackDavis",
+        "position": "2nd",
+        "date": "2021"
+    },
+    {
+        "title": "PennApps XXI",
+        "position": "Top 30",
+        "date": "2020"
+    },
+    {
+        "title": "Google Solution Challenge",
+        "position": "Top 20",
+        "date": "2020"
+    },
+    {
+        "title": "HackDavis",
+        "position": "Best Social Good Hack, Best Use of Google Cloud",
+        "date": "2020"
     }
 ]

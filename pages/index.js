@@ -26,9 +26,9 @@ export default function Home() {
           <Education />
         </div>
       </Row>
-      <Row>
+      {/* <Row>
         <Experience jsonExperiences={researchExperience} title={"Research Experience"} isExperience />
-      </Row>
+      </Row> */}
       <Row>
         <Experience jsonExperiences={workExperience} title={"Work Experience"} isExperience />
       </Row>
