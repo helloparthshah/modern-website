@@ -1,6 +1,6 @@
 [
     {
-        "title": "Gem5 Vision",
+        "title": "gem5 Vision",
         "start": "Jan 2023",
         "end": "June 2023",
         "description": "Improved the gem5 Resource Infrastructure by implementing advanced search functionality forresource discovery within the gem5 ecosystem.\nIntroduced a comprehensive resource categorization system, allowing users to access specific resource types based on theirrequirements.\nExpanded gem5’s database support by integrating various options, providing users with multiple choices for storing,retrieving, and managing resources.",
@@ -15,6 +15,24 @@
             "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf"
         },
         "image": "/images/gem5.webp"
+    },
+    {
+        "title": "QuixFolio",
+        "start": "March 2023",
+        "end": "April 2023",
+        "description": "QuixFolio is an easy-to-use tool that helps you build professional portfolios in just minutes.\nQuixFolio is completely open-source.\nSimply select a template, add your information, and QuixFolio will take care of the rest. It will even host your portfolio on GitHub pages for you!\nOver 190 visitors and 1000+ page views in the first week of alpha.",
+        "skills": [
+            "ReactJS",
+            "NextJS",
+            "Material UI",
+            "GitHub Pages",
+            "GitHub Actions"
+        ],
+        "links": {
+            "GitHub": "https://github.com/quixfolio/quixfolio",
+            "Demo": "https://quixfolio.vercel.app/"
+        },
+        "image": "/images/quixfolio.png"
     },
     {
         "title": "Stadia Wireless",
@@ -32,5 +50,22 @@
             "The Verge": "https://www.theverge.com/2022/10/5/23388789/google-stadia-fans-controllers-wireless-hack-workaround"
         },
         "image": "/images/stadia.png"
+    },
+    {
+        "title": "VeggieBuddie",
+        "start": "Jan 2020",
+        "end": "Jan 2020",
+        "description": "An app forthose with dietrestrictions, tells if safe to eat using an image of the ingredients\nMost Social Good Hack, Second best use of Google Cloud Platform at HackDavis.\nOne of the top 20 solutions at Google's Solution Challenge.",
+        "skills": [
+            "Flutter",
+            "Firebase",
+            "Google Cloud Platform",
+            "Dart"
+        ],
+        "links": {
+            "GitHub": "https://github.com/helloparthshah/VeggieBuddie",
+            "Play Store": "https://play.google.com/store/apps/details?id=com.veggiebuddie"
+        },
+        "image": "/images/veggie.webp"
     }
 ]

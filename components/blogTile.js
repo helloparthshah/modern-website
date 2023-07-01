@@ -15,8 +15,11 @@ export default function BlogTile({ blog }) {
     function readingTime(text) {
         const wpm = 225;
         const words = text.trim().split(/\s+/).length;
-        const time = Math.ceil(words / wpm);
-        return time;
+        const time = words / wpm;
+        if (time < 1) {
+            return "less than 1";
+        }
+        return Math.ceil(time);
     }
     return (
         <div className="blog-tile" key={blog.name}>
