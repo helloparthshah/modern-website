@@ -65,11 +65,11 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
                             </Col>
                             <Col className="d-flex justify-content-center flex-column">
                                 <ul>
-                                    {experience.description.split('\n').map((line, index) => {
+                                    {experience.description != "" ? experience.description.split('\n').map((line, index) => {
                                         return (
                                             <li key={index}>{line}</li>
                                         );
-                                    })}
+                                    }) : "In progress"}
                                 </ul>
                             </Col>
                         </Row>
