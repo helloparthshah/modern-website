@@ -21,6 +21,10 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
+.topbar path {
+  transition: all 0.2s ease;
+}
+
 
 /* Styling for the content inside the textbox */
 .content {
