@@ -39,7 +39,7 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
                                     {experience.location}
                                 </Row>
                                 <Row>
-                                    <h6>
+                                    <h6 className="text-center">
                                         {
                                             experience.skills ? experience.skills.map((skill, index) => {
                                                 return (
