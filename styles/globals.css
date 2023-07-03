@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
-
+/* globals.css */
 .content-text * {
   font-size: 1rem;
   font-weight: 300;
@@ -115,7 +113,7 @@
 
 .scrollToTopBtn {
   border: 0;
-  border-radius: 50% !important;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   display: flex;
