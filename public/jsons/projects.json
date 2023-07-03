@@ -68,5 +68,17 @@
             "Play Store": "https://play.google.com/store/apps/details?id=com.veggiebuddie"
         },
         "image": "/images/veggie.webp"
+    },
+    {
+        "title": "Other Projects",
+        "start": "Oct 4, 2001",
+        "end": "Present",
+        "description": "A dynamically curated list of my other projects.",
+        "skills": [],
+        "links": {
+            "Website": "https://helloparthshah.github.io/",
+            "GitHub": "https://github.com/helloparthshah?tab=repositories&q=&type=&language=&sort=stargazers"
+        },
+        "image": "/images/projects.png"
     }
 ]
