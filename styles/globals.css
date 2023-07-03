@@ -136,10 +136,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 0;
   }
 
   .hello>div:first-child {
     width: 75%;
+  }
+
+  .hello>div {
+    margin: 0 !important;
   }
 
   .experience {
