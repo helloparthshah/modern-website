@@ -166,4 +166,17 @@
   .popover {
     max-width: 80%;
   }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .links .col {
+    width: 100%;
+    justify-content: center !important;
+  }
 }
