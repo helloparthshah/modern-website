@@ -4,6 +4,7 @@ import { generateMLACitation, generateChicagoCitation, generateIEEECitation } fr
 import CopyIcon from "./copyIcon";
 
 export default function Publication() {
+    const name = process.env.CONFIG.name;
 
     function popover(publication) {
         return (
@@ -64,10 +65,10 @@ export default function Publication() {
                                     <span key={index} variant="secondary">
                                         {
                                             publication.authors.map((author, index) => {
-                                                const isParth = author.includes("Parth");
+                                                const isMe = author.includes(name.split(" ")[0]);
                                                 return (
                                                     <span key={index}>
-                                                        <span style={{ textDecoration: isParth ? "underline" : "none" }}>
+                                                        <span style={{ textDecoration: isMe ? "underline" : "none" }}>
                                                             {author}
                                                         </span>
                                                         {index < publication.authors.length - 1 ? ", " : ""}

@@ -2,6 +2,8 @@ import { Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import parth from '/public/images/parth.jpg';
 export default function Hello() {
+  const name = process.env.CONFIG.name;
+
   return (
     <Row className='mt-5 mb-5 hello'>
       <Col xs={5}>
@@ -15,7 +17,7 @@ export default function Hello() {
       <Col className='d-flex justify-content-center flex-column ms-5'>
         <Row>
           <h1 className='name'>
-            Parth Shah
+            {name}
           </h1>
         </Row>
         <Row>

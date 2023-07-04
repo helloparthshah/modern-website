@@ -24,7 +24,15 @@ export default function Footer() {
         <Row className="h-100 w-75">
           <Col className="text-center primary d-flex flex-column h-100 pt-2 pb-2 gap-1 footer-col align-items-center">
             <span className="text-muted main-text-regular">Connect with Me</span>
-            <Link href="https://github.com/helloparthshah">
+            {
+              process.env.CONFIG.footerLinks ? Object.keys(process.env.CONFIG.footerLinks).map((key, index) => {
+                return (
+                  <Link key={index} href={process.env.CONFIG.footerLinks[key]}>{key}</Link>
+                );
+              }
+              ) : null
+            }
+            {/* <Link href="https://github.com/helloparthshah">
               GitHub
             </Link>
             <Link href="https://www.linkedin.com/in/helloparthshah/">
@@ -32,7 +40,7 @@ export default function Footer() {
             </Link>
             <Link href="https://www.instagram.com/helloparthshah/">
               Instagram
-            </Link>
+            </Link> */}
           </Col>
         </Row>
         <Row className="w-100">
