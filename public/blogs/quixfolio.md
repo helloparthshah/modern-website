@@ -1,11 +1,11 @@
 ---
-date: 07/04/2023
+date: 07/03/2023
 title: QuixFolio
 tags:
 - projects
 authors:
-  - Kunal Pai
   - Parth Shah
+  - Kunal Pai
   - Harshil Patel
 image: /images/QuixFolio.png
 ---

@@ -17,7 +17,7 @@ export default function BlogTile({ blog }) {
         const words = text.trim().split(/\s+/).length;
         const time = words / wpm;
         if (time < 1) {
-            return "less than 1";
+            return "<1";
         }
         return Math.ceil(time);
     }
