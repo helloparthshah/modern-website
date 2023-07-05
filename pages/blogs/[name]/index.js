@@ -35,7 +35,7 @@ export default function Page() {
 
 
     return (
-        <div className="container">
+        <Container>
             <div className='mt-5 mb-5'>
                 <Metadata metadata={metadata} />
             </div>
@@ -48,6 +48,6 @@ export default function Page() {
                     {content}
                 </ReactMarkdown>
             </Container>
-        </div>
+        </Container>
     )
 }

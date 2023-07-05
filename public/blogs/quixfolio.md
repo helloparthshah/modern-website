@@ -8,6 +8,7 @@ authors:
   - Kunal Pai
   - Harshil Patel
 image: /images/QuixFolio.png
+description: QuixFolio is a website builder that allows you to create your own portfolio resume website quickly and easily.
 ---
 # QuixFolio - Portfolio Resume Website Builder
 

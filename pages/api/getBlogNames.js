@@ -3,7 +3,7 @@ import parseMD from 'parse-md'
 import fs from 'fs';
 
 export default function handler(req, res) {
-    const query = req.body.query ?? '';
+    const query = req.body.query.toLowerCase() ?? '';
     const keywords = query.split(' ');
     let names = []
     const blogDirectory = path.resolve('./public', 'blogs');
@@ -15,11 +15,7 @@ export default function handler(req, res) {
 
         names.push({
             name: name.slice(0, -3),
-            title: metadata.title,
-            date: metadata.date,
-            tags: metadata.tags,
-            image: metadata.image,
-            authors: metadata.authors,
+            metadata: metadata,
             content: content
         });
     });
@@ -28,19 +24,19 @@ export default function handler(req, res) {
         if (query === '') {
             return true;
         }
-        for (let tag of name.tags) {
+        for (let tag of name.metadata.tags) {
             if (tag.toLowerCase().includes(query.toLowerCase())) {
                 return true;
             }
         }
-        for (let author of name.authors) {
+        for (let author of name.metadata.authors) {
             if (author.toLowerCase().includes(query.toLowerCase())) {
                 return true;
             }
         }
         let authorDistances = keywords.map((keyword, index) => {
             // split the author name into first and last name
-            let authorNames = name.authors.map((author) => author.toLowerCase().split(' '));
+            let authorNames = name.metadata.authors.map((author) => author.toLowerCase().split(' '));
             // flatten the array
             authorNames = [].concat.apply([], authorNames);
             // return the minimum distance between the keyword and the author's first and last name
@@ -49,11 +45,11 @@ export default function handler(req, res) {
         if (Math.min(...authorDistances) < 2) {
             return true;
         }
-        if (name.title.toLowerCase().includes(query.toLowerCase())) {
+        if (name.metadata.title.toLowerCase().includes(query.toLowerCase())) {
             return true;
         }
         let titleDistances = keywords.map((keyword, index) => {
-            return Math.min(...name.title.toLowerCase().split(' ').map((word) => damerauLevenshteinDistance(keyword, word)));
+            return Math.min(...name.metadata.title.toLowerCase().split(' ').map((word) => damerauLevenshteinDistance(keyword, word)));
         });
         return Math.min(...titleDistances) < 2;
     });

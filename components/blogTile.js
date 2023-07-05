@@ -29,24 +29,24 @@ export default function BlogTile({ blog }) {
                         <Row>
                             <h6 className="main-text-title-bold">
                                 {
-                                    blog.authors ? blog.authors.map((author, index) => {
+                                    blog.metadata.authors ? blog.metadata.authors.map((author, index) => {
                                         return (
                                             <span key={index}>
                                                 {author}
-                                                {index < blog.authors.length - 1 ? ", " : ""}
+                                                {index < blog.metadata.authors.length - 1 ? ", " : ""}
                                             </span>
                                         )
                                     }) : null
                                 }
                                 <span style={{ fontWeight: 'normal' }}>
                                     {" • "}
-                                    <DateConvert date={blog.date} />
+                                    <DateConvert date={blog.metadata.date} />
                                 </span>
                             </h6>
                         </Row>
                         <Row className="mb-3">
                             <h4 className="main-text-title-bold">
-                                {blog.title}
+                                {blog.metadata.title}
                             </h4>
                         </Row>
                         <Row className="mb-3">
@@ -54,22 +54,26 @@ export default function BlogTile({ blog }) {
                                 className="content-text"
                                 style={{
                                     height: '150px',
-                                    maxWidth: '100%',
+                                    width: '100%',
                                     overflow: 'hidden',
+                                    whiteSpace: 'no-wrap',
                                     textOverflow: 'ellipsis',
                                 }}>
-                                <ReactMarkdown
-                                    remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter, remarkSlug]}
-                                    rehypePlugins={[rehypeHighlight, { ignoreMissing: true }, rehypeSlug, rehypeRaw]}
-                                >
-                                    {blog.content}
-                                </ReactMarkdown>
+                                {
+                                    blog.metadata.description ? blog.metadata.description :
+                                        <ReactMarkdown
+                                            remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter, remarkSlug]}
+                                            rehypePlugins={[rehypeHighlight, { ignoreMissing: true }, rehypeSlug, rehypeRaw]}
+                                        >
+                                            {blog.content}
+                                        </ReactMarkdown>
+                                }
                             </div>
                         </Row>
                         <Row>
                             <p>
                                 {
-                                    blog.tags ? blog.tags.map((tag, index) => {
+                                    blog.metadata.tags ? blog.metadata.tags.map((tag, index) => {
                                         return (
                                             <Badge bg="secondary" className="me-2" key={index}>
                                                 {tag}
@@ -86,8 +90,8 @@ export default function BlogTile({ blog }) {
                         <Row className="justify-content-end w-100 h-100">
                             <div style={{ width: '60%', height: '100%', position: 'relative' }}>
                                 <Image
-                                    src={blog.image ?? placeholder}
-                                    alt={blog.title}
+                                    src={blog.metadata.image ?? placeholder}
+                                    alt={blog.metadata.title}
                                     fill
                                     style={{
                                         borderRadius: '10px',
