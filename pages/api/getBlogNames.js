@@ -56,7 +56,7 @@ export default function handler(req, res) {
 
     // sort by date
     names.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
+        return new Date(b.metadata.date) - new Date(a.metadata.date);
     });
     res.status(200).json(names);
 }
