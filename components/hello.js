@@ -1,8 +1,23 @@
 import { Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import parth from '/public/images/parth.jpg';
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import SplitType from 'split-type';
 export default function Hello() {
   const name = process.env.CONFIG.name;
+  useEffect(() => {
+    const heading = new SplitType('.name', { types: 'words' });
+    const description = new SplitType('.hello p', { types: 'lines' });
+    const heroElements = [...heading.words, ...description.lines, '.btn'];
+    gsap.from(heroElements, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      stagger: { amount: 1 },
+      ease: 'ease',
+    });
+  }, []);
 
   return (
     <Row className='mt-5 mb-5 hello'>
@@ -21,8 +36,10 @@ export default function Hello() {
           </h1>
         </Row>
         <Row>
-          Hello! I am a Software Engineer at Amazon.
-          I graduated from the University of California, Davis with a B.S. in Computer Science and Engineering.
+          <p className='description'>
+            Hello! I am a Software Engineer at Amazon.
+            I graduated from the University of California, Davis with a B.S. in Computer Science and Engineering.
+          </p>
         </Row>
         <Row className='mt-3'>
           <Col className='d-flex justify-content-center'>
