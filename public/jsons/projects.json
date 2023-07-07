@@ -3,7 +3,7 @@
         "title": "gem5 Vision",
         "start": "Jan 2023",
         "end": "June 2023",
-        "description": "Improved the gem5 Resource Infrastructure by implementing advanced search functionality forresource discovery within the gem5 ecosystem.\nIntroduced a comprehensive resource categorization system, allowing users to access specific resource types based on theirrequirements.\nExpanded gem5’s database support by integrating various options, providing users with multiple choices for storing,retrieving, and managing resources.",
+        "description": "Improved the gem5 Resource Infrastructure by implementing advanced search functionality for resource discovery within the gem5 ecosystem.\nIntroduced a comprehensive resource categorization system, allowing users to access specific resource types based on the irrequirements.\nExpanded gem5's database support by integrating various options, providing users with multiple choices for storing,retrieving, and managing resources.",
         "skills": [
             "NextJS",
             "ReactJS",
@@ -56,7 +56,7 @@
         "title": "VeggieBuddie",
         "start": "Jan 2020",
         "end": "Jan 2020",
-        "description": "An app forthose with dietrestrictions, tells if safe to eat using an image of the ingredients\nMost Social Good Hack, Second best use of Google Cloud Platform at HackDavis.\nOne of the top 20 solutions at Google's Solution Challenge.",
+        "description": "An app forthose with diet restrictions, tells if safe to eat using an image of the ingredients\nMost Social Good Hack, Second best use of Google Cloud Platform at HackDavis.\nOne of the top 20 solutions at Google's Solution Challenge.",
         "skills": [
             "Flutter",
             "Firebase",
