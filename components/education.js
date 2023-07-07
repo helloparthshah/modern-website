@@ -12,9 +12,9 @@ export default function Education() {
                 Education
             </h1>
             {
-                educations.map((education) => {
+                educations.map((education, index) => {
                     return (
-                        <EducationTile education={education} />
+                        <EducationTile education={education} key={index} />
                     )
                 })
             }
