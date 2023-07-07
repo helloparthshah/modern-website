@@ -22,7 +22,7 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
     )
 }
 
-function ExperienceTile({ isExperience, experience, key }) {
+function ExperienceTile({ isExperience, experience }) {
     const ref = useRef(null);
     useEffect(() => {
         gsap.from(ref.current, {
@@ -38,7 +38,7 @@ function ExperienceTile({ isExperience, experience, key }) {
     }, []);
 
     return (
-        <Row className="mb-3 p-2 experience" ref={ref} key={key}>
+        <Row className="mb-3 p-2 experience" ref={ref}>
             <Col className="d-flex align-items-center justify-content-center flex-column text-center">
                 <Row style={{ width: isExperience ? '100px' : "100%", height: isExperience ? '100px' : "300px" }}>
                     <div style={{ position: 'relative' }}>

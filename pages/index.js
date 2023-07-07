@@ -87,7 +87,7 @@ export default function Home() {
   );
 }
 
-function Award({ award, key }) {
+function Award({ award }) {
   const ref = useRef(null);
   useEffect(() => {
     gsap.from(ref.current, {
@@ -102,7 +102,7 @@ function Award({ award, key }) {
     });
   }, []);
   return (
-    <Row key={key} className="mb-3" ref={ref}>
+    <Row className="mb-3" ref={ref}>
       <Col xs={1} className="d-flex align-items-center" style={{ width: 'auto' }}>
         <Image src={trophy} roundedCircle width={50} height={50} />
       </Col>

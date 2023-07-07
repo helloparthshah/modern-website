@@ -22,7 +22,7 @@ export default function Publication() {
     )
 }
 
-function PublicationTile({ publication, name, key }) {
+function PublicationTile({ publication, name }) {
     const ref = useRef(null);
 
     function popover(publication) {
@@ -74,7 +74,7 @@ function PublicationTile({ publication, name, key }) {
     }, []);
 
     return (
-        <Row key={key} className="mb-3 p-2 experience" ref={ref}>
+        <Row className="mb-3 p-2 experience" ref={ref}>
             <Col>
                 <Row>
                     <Col>

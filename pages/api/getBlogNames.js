@@ -3,7 +3,7 @@ import parseMD from 'parse-md'
 import fs from 'fs';
 
 export default function handler(req, res) {
-    const query = req.body.query.toLowerCase() ?? '';
+    const query = (req.body.query ?? '').toLowerCase();
     const keywords = query.split(' ');
     let names = []
     const blogDirectory = path.resolve('./public', 'blogs');
