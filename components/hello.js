@@ -14,6 +14,7 @@ export default function Hello() {
       y: 24,
       opacity: 0,
       duration: 0.8,
+      delay: 0.5,
       stagger: { amount: 1 },
       ease: 'ease',
     });
@@ -26,6 +27,8 @@ export default function Hello() {
           <Image src={parth} alt='Parth Shah'
             fill
             style={{ objectFit: 'cover' }}
+            placeholder='blur'
+            priority
           />
         </div>
       </Col>
