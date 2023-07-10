@@ -1,9 +1,6 @@
 import { Row, Col, Badge } from 'react-bootstrap';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import SplitType from 'split-type';
 
 export default function Metadata({ metadata }) {
     const date = new Date(metadata.date).toLocaleDateString('en-US',
@@ -12,21 +9,7 @@ export default function Metadata({ metadata }) {
             month: 'long',
             day: 'numeric'
         });
-    useEffect(() => {
-        const heading = new SplitType('.title', { types: 'words' });
-        const description = new SplitType('.description', { types: 'lines' });
-        const heroElements = [...heading.words, ...description.lines];
-        // wait till metadata is loaded
-        if (!metadata) return;
-        console.log(date);
-        gsap.from(heroElements, {
-            y: 24,
-            opacity: 0,
-            duration: 0.8,
-            stagger: { amount: 0.5 },
-            ease: 'ease',
-        });
-    }, [metadata]);
+
     return (
         <>
             <Row>

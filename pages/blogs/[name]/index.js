@@ -8,7 +8,7 @@ import rehypeRaw from 'rehype-raw'
 import remarkSlug from "remark-slug";
 import remarkFrontmatter from 'remark-frontmatter';
 import { useRouter } from 'next/router'
-import 'github-markdown-css/github-markdown-light.css'
+// import 'github-markdown-css/github-markdown-light.css'
 import Metadata from '@/components/metadata'
 import { Container } from 'react-bootstrap'
 

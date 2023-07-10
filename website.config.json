@@ -1,6 +1,8 @@
 {
     "email": "helloparthshah+contact@gmail.com",
     "name": "Parth Shah",
+    "intro": "Hello! I am a Software Engineer at Amazon.\nI graduated from the University of California, Davis with a B.S. in Computer Science and Engineering.",
+    "image": "/images/parth.jpeg",
     "footerLinks": {
         "GitHub": "https://github.com/helloparthshah",
         "LinkedIn": "https://www.linkedin.com/in/helloparthshah/",

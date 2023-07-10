@@ -1,9 +1,9 @@
 import { Col, Row, Button } from 'react-bootstrap';
 import Image from 'next/image';
-import parth from '/public/images/parth.jpg';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
+
 export default function Hello() {
   const name = process.env.CONFIG.name;
   useEffect(() => {
@@ -24,10 +24,10 @@ export default function Hello() {
     <Row className='mt-5 mb-5 hello'>
       <Col xs={5}>
         <div className='animate'>
-          <Image src={parth} alt='Parth Shah'
+          <Image src={process.env.CONFIG.image}
+            alt={process.env.CONFIG.name}
             fill
             style={{ objectFit: 'cover' }}
-            placeholder='blur'
             priority
           />
         </div>
@@ -40,8 +40,7 @@ export default function Hello() {
         </Row>
         <Row>
           <p className='description'>
-            Hello! I am a Software Engineer at Amazon.
-            I graduated from the University of California, Davis with a B.S. in Computer Science and Engineering.
+            {process.env.CONFIG.intro}
           </p>
         </Row>
         <Row className='mt-3'>
