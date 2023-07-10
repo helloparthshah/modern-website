@@ -222,7 +222,7 @@
   background-color: hsl(210, 11%, 20%)
 }
 
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   :root {
     --bs-emphasis-color-rgb: 0, 0, 0;
   }
