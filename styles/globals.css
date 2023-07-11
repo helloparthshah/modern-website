@@ -222,53 +222,51 @@
   background-color: hsl(210, 11%, 20%)
 }
 
-html[data-bs-theme="dark"] {
-  :root {
-    --bs-emphasis-color-rgb: 0, 0, 0;
-  }
+html[data-bs-theme="dark"] :root {
+  --bs-emphasis-color-rgb: 0, 0, 0;
+}
 
-  .content {
-    color: #f2f2f2;
-  }
+html[data-bs-theme="dark"] .content {
+  color: #f2f2f2;
+}
 
-  .content h1 {
-    color: #f2f2f2 !important;
-  }
+html[data-bs-theme="dark"] .content h1 {
+  color: #f2f2f2 !important;
+}
 
-  .btn-outline-secondary {
-    --bs-btn-color: #f2f2f2;
-  }
+html[data-bs-theme="dark"] .btn-outline-secondary {
+  --bs-btn-color: #f2f2f2;
+}
 
-  .bi-trophy-fill {
-    fill: #f2f2f2;
-  }
+html[data-bs-theme="dark"] .bi-trophy-fill {
+  fill: #f2f2f2;
+}
 
-  .search-form input:focus+#search-icon {
-    background-color: hsl(210, 11%, 20%)
-  }
+html[data-bs-theme="dark"] .search-form input:focus+#search-icon {
+  background-color: hsl(210, 11%, 20%)
+}
 
-  #search-icon:hover {
-    background-color: hsl(210, 11%, 20%)
-  }
+html[data-bs-theme="dark"] #search-icon:hover {
+  background-color: hsl(210, 11%, 20%)
+}
 
-  .scrollToTopBtn {
-    background-color: #f2f2f2
-  }
+html[data-bs-theme="dark"] .scrollToTopBtn {
+  background-color: #f2f2f2
+}
 
-  .scrollToTopBtn:hover {
-    background-color: #787878
-  }
+html[data-bs-theme="dark"] .scrollToTopBtn:hover {
+  background-color: #787878
+}
 
-  .scrollToTopBtn svg {
-    stroke: rgb(33, 33, 33);
-  }
+html[data-bs-theme="dark"] .scrollToTopBtn svg {
+  stroke: rgb(33, 33, 33);
+}
 
-  .copy-button {
-    fill: #acb5bd;
-    transition: fill 200ms ease-in-out;
-  }
+html[data-bs-theme="dark"] .copy-button {
+  fill: #acb5bd;
+  transition: fill 200ms ease-in-out;
+}
 
-  .copy-button:hover {
-    fill: #f2f2f2;
-  }
+html[data-bs-theme="dark"] .copy-button:hover {
+  fill: #f2f2f2;
 }
