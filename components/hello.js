@@ -9,7 +9,7 @@ export default function Hello() {
   useEffect(() => {
     const heading = new SplitType('.name', { types: 'words' });
     const description = new SplitType('.hello p', { types: 'lines' });
-    const heroElements = [...heading.words, ...description.lines, '.btn'];
+    const heroElements = [...heading.words, ...description.lines, '.hello .btn'];
     gsap.from(heroElements, {
       y: 24,
       opacity: 0,
