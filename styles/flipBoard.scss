@@ -83,7 +83,7 @@ html[data-bs-theme="dark"] .flip-board-char::before {
   content: attr(char);
 }
 
-@for $i from 1 through 50 {
+@for $i from 0 through 15 {
   @keyframes flip-#{$i} {
     0% {
       color: #000;
@@ -116,11 +116,13 @@ html[data-bs-theme="dark"] .flip-board-char::before {
     }
   }
 
-  .flip-board-char:nth-child(#{$i}n)::before,
-  .flip-board-char:nth-child(#{$i}n)::after {
-    animation: flip-#{$i} 1s 1 ease-in-out;
-    animation-delay: #{$i * 0.1}s;
-    transition-delay: #{$i * 0.1}s;
+  @for $j from 0 through 3 {
+    .word-#{$j} .flip-board-char:nth-child(#{$i})::before,
+    .word-#{$j} .flip-board-char:nth-child(#{$i})::after {
+      animation: flip-#{$i + 10 * $j} 1s 1 ease-in-out;
+      animation-delay: #{$i * 0.1}s;
+      transition-delay: #{$i * 0.1}s;
+    }
   }
 }
 

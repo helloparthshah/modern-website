@@ -4,7 +4,7 @@ export default function FlipBoard({ text }) {
       <div className="flip-board">
         {text.split(" ").map((word, index) => {
           return (
-            <div key={index} className="flip-board-word">
+            <div key={index} className={"flip-board-word word-" + index}>
               {word.split("").map((char, letter_index) => {
                 return (
                   <div
