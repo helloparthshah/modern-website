@@ -1,0 +1,12 @@
+[
+    {
+        "path": "socials",
+        "title": "Socials",
+        "links": [
+            {
+                "label": "This Website",
+                "url": "https://helloparthshah.vercel.app/"
+            }
+        ]
+    }
+]

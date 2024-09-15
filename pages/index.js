@@ -11,8 +11,6 @@ import Education from '@/components/education';
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   useEffect(() => {

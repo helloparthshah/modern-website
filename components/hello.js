@@ -3,13 +3,14 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
+import FlipBoard from './flipBoard';
 
 export default function Hello() {
   const name = process.env.CONFIG.name;
   useEffect(() => {
-    const heading = new SplitType('.name', { types: 'words' });
+    // const heading = new SplitType('.name', { types: 'words' });
     const description = new SplitType('.hello p', { types: 'lines' });
-    const heroElements = [...heading.words, ...description.lines, '.hello .btn'];
+    const heroElements = [ ...description.lines, '.hello .btn'];
     gsap.from(heroElements, {
       y: 24,
       opacity: 0,
@@ -34,8 +35,8 @@ export default function Hello() {
       </Col>
       <Col className='d-flex justify-content-center flex-column ms-5'>
         <Row>
-          <h1 className='name'>
-            {name}
+          <h1 className='name mb-3'>
+            <FlipBoard text={name} />
           </h1>
         </Row>
         <Row>

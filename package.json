@@ -38,6 +38,10 @@
     "remark-html": "^15.0.2",
     "remark-slug": "^7.0.1",
     "remark-toc": "^8.0.1",
-    "split-type": "^0.3.3"
+    "split-type": "^0.3.3",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "sass": "^1.78.0"
   }
 }

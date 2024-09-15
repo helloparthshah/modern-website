@@ -1,5 +1,7 @@
 # About Page - Personal Portfolio Website
 
+---
+
 Welcome to this personal portfolio website! We are delighted to present to you a platform that showcases one's collective works and achievements. This website has been thoughtfully engineered to provide a seamless updating experience without the need to delve into the complexities of the actual code.
 
 **Creators:**
