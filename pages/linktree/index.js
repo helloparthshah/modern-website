@@ -29,7 +29,7 @@ export default function LinktreeLinks() {
     <Container className="contact">
       <h1 style={{ textAlign: "center" }}>Linktree Boards</h1>
       <hr className="mb-5" />
-      <Col className="text-center" ref={ref}>
+      <Col ref={ref}>
         {linktree.map((linkGroup, index) => {
           return (
             <Row key={index}>
@@ -38,7 +38,7 @@ export default function LinktreeLinks() {
                 passHref
                 legacyBehavior
               >
-                <Button key={index} variant="outline-secondary" className="m-2">
+                <Button key={index} variant="outline-secondary">
                   {linkGroup.title}
                 </Button>
               </Link>

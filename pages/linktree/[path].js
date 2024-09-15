@@ -56,7 +56,6 @@ export default function LinktreePage() {
                 href={link.url}
                 target="_blank"
                 variant="outline-secondary"
-                className="m-2"
               >
                 {link.label}
               </Button>

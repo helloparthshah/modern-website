@@ -2,11 +2,18 @@ $chars: "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
   "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3",
   "4", "5", "6", "7", "8", "9";
 
+.flip-board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .flip-board {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -16,6 +23,8 @@ $chars: "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
   align-items: center;
   flex-direction: row;
   margin-bottom: 1px;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .flip-board-char {
@@ -26,10 +35,10 @@ $chars: "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
   z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  font-family: "Fire Sans", sans-serif;
-  font-weight: 100;
+  font-family: "Fira Sans", system-ui;
+  font-style: normal;
   line-height: 1;
   height: 6rem;
   width: 6rem;
@@ -44,7 +53,7 @@ html[data-bs-theme="dark"] .flip-board-char {
   background-color: #000;
   border-bottom: 2px solid #fff;
   z-index: 20;
-  height: 3rem;
+  height: 50%;
   width: 100%;
   animation-fill-mode: forwards;
   backface-visibility: hidden;
@@ -77,21 +86,11 @@ html[data-bs-theme="dark"] .flip-board-char::before {
 @for $i from 1 through 50 {
   @keyframes flip-#{$i} {
     0% {
-      content: "";
-      transform: rotateX(0);
-    }
-
-    10% {
-      content: nth($chars, random(length($chars)));
-      transform: rotateX(360deg);
-    }
-
-    20% {
-      content: nth($chars, random(length($chars)));
+      color: #000;
       transform: rotateX(0deg);
     }
 
-    30% {
+    20% {
       content: nth($chars, random(length($chars)));
       transform: rotateX(360deg);
     }
@@ -101,41 +100,38 @@ html[data-bs-theme="dark"] .flip-board-char::before {
       transform: rotateX(0);
     }
 
-    50% {
-      content: nth($chars, random(length($chars)));
-      transform: rotateX(360deg);
-    }
-
     60% {
-      content: nth($chars, random(length($chars)));
-      transform: rotateX(0deg);
-    }
-
-    70% {
       content: nth($chars, random(length($chars)));
       transform: rotateX(360deg);
     }
 
     80% {
       content: nth($chars, random(length($chars)));
-      transform: rotateX(0);
-    }
-
-    90% {
-      content: nth($chars, random(length($chars)));
-      transform: rotateX(360deg);
+      transform: rotateX(0deg);
     }
 
     100% {
       content: attr(char);
-      transform: rotateX(0deg);
+      transform: rotateX(360deg);
     }
   }
 
   .flip-board-char:nth-child(#{$i}n)::before,
   .flip-board-char:nth-child(#{$i}n)::after {
-    animation: flip-#{$i} 1.5s 1 ease-in-out;
+    animation: flip-#{$i} 1s 1 ease-in-out;
     animation-delay: #{$i * 0.1}s;
     transition-delay: #{$i * 0.1}s;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  .flip-board {
+    margin-top: 1rem;
+  }
+  .flip-board-char {
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.5rem;
+    line-height: 2;
   }
 }

@@ -1,16 +1,16 @@
 export default function FlipBoard({ text }) {
   return (
-    <>
+    <div className="flip-board-container">
       <div className="flip-board">
         {text.split(" ").map((word, index) => {
           return (
             <div key={index} className="flip-board-word">
-              {word.split("").map((char, index) => {
+              {word.split("").map((char, letter_index) => {
                 return (
                   <div
-                    key={index}
+                    key={letter_index}
                     className={"flip-board-char"}
-                    char={char}
+                    char={char.toUpperCase()}
                   ></div>
                 );
               })}
@@ -18,6 +18,6 @@ export default function FlipBoard({ text }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
