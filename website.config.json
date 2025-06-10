@@ -1,7 +1,7 @@
 {
     "email": "helloparthshah+contact@gmail.com",
     "name": "Parth Shah",
-    "intro": "Hello! I am a Software Engineer at Amazon.\nI graduated from the University of California, Davis with a B.S. in Computer Science and Engineering.",
+    "intro": "I am Parth Shah, a Software Engineer at Amazon with a B.S. in Computer Science and Engineering from UC Davis. I'm currently working on Amazon's catalog contribution ingestion pipeline and have experience with GenAI listing tools. I've also contributed to projects like gem5 Vision, QuixFolio, and Stadia Wireless, showcasing my skills in web development, mobile app development, and cloud technologies.",
     "image": "/images/parth.jpeg",
     "footerLinks": {
         "GitHub": "https://github.com/helloparthshah",
