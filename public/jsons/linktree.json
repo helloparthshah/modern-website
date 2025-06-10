@@ -4,9 +4,17 @@
         "title": "Socials",
         "links": [
             {
-                "label": "This Website",
+                "label": "Personal Website",
                 "url": "https://helloparthshah.vercel.app/"
-            }
+            },
+            {
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/in/helloparthshah/"
+            },
+            {
+                "label": "GitHub",
+                "url": "https://github.com/helloparthshah"
+            },
         ]
     }
 ]
