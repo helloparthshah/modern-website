@@ -1,10 +1,19 @@
 [
     {
+        "title": "SDE 2",
+        "organization": "Amazon",
+        "start": "April 2025",
+        "end": "Ongoing",
+        "description": "Working on developing and maintaining Amazon's catalog contribution ingestion pipelineWorking on developing and maintaining Amazon's catalog contribution ingestion pipeline",
+        "location": "Sunnyvale, CA",
+        "image": "/images/amazon.gif"
+    },
+    {
         "title": "SDE 1",
         "organization": "Amazon",
         "start": "July 2023",
-        "end": "Ongoing",
-        "description": "Working on developing and maintaining Amazon's catalog contribution ingestion pipelineWorking on developing and maintaining Amazon's catalog contribution ingestion pipeline",
+        "end": "April 2025",
+        "description": "https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-powered-product-listings Worked on allowing Amazon selling partners by using our GenAI listing tools to quickly and easily create high-quality product pages on Amazon.com.\nWorked on reducing shared code dependency for legacy systems by separating deployment pipelines reducing build times by over 80%",
         "location": "Sunnyvale, CA",
         "image": "/images/amazon.gif"
     },
