@@ -43,6 +43,7 @@ $chars: "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
   height: 6rem;
   width: 6rem;
   text-align: center;
+  border-radius: 10px;
 }
 
 html[data-bs-theme="dark"] .flip-board-char {
