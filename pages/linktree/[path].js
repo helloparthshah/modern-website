@@ -52,6 +52,7 @@ export default function LinktreePage() {
           return (
             <Row key={index}>
               <Button
+                className="mb-5"
                 key={index}
                 href={link.url}
                 target="_blank"
