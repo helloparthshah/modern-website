@@ -1,5 +1,26 @@
 [
     {
+        "title": "HashiruAI",
+        "start": "April 2025",
+        "end": "June 2025",
+        "description": "The Expert Orchestrator AI: Dynamically Adapting, Budget-Aware, and Precisely Tailored to Your Needs\nA dynamic multi-agent system achieves adaptability and intelligence through on-demand skill learning and information integration, while intelligently managing resources to minimize costs by using expensive models only when necessary for a personalized experience.",
+        "skills": [
+            "Gradio",
+            "Hugging Face",
+            "Agentic AI",
+            "GenAI",
+        ],
+        "links": {
+            "Paper": "https://arxiv.org/abs/2506.04255",
+            "Try it out": "https://helloparthshah-hashiruai.hf.space",
+            "Demo Video": "https://www.youtube.com/watch?v=kgqxsIqvGP4",
+            "Technical breakdown": "https://www.youtube.com/watch?v=iTX_vtcSY-M",
+            "GitHub": "https://github.com/HASHIRU-AI",
+            "Pitch Deck": "https://docs.google.com/presentation/d/1Un_Zd6Oqg_5NS8CNODXGx30sk5-FNy0urOtu2KwwVow/edit?usp=sharing"
+        },
+        "image": "/images/gem5.webp"
+    },
+    {
         "title": "gem5 Vision",
         "start": "Jan 2023",
         "end": "June 2023",
