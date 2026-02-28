@@ -1,5 +1,11 @@
 [
     {
+        "title": "AgentX - AgentBeats",
+        "position": "2nd Place",
+        "link": "https://arxiv.org/abs/2602.07391",
+        "date": "2026"
+    },
+    {
         "title": "Amazon",
         "position": "Bias for Action Award",
         "date": "2024"
@@ -11,8 +17,13 @@
     },
     {
         "title": "Chevron",
-        "position": "Cheveron Scholars Award",
+        "position": "Chevron Scholars Award",
         "link": "https://engineering.ucdavis.edu/news/2022-college-engineering-undergraduate-student-awards",
+        "date": "2022"
+    },
+    {
+        "title": "HackDavis",
+        "position": "1st Place",
         "date": "2022"
     },
     {
@@ -22,12 +33,7 @@
     },
     {
         "title": "HackDavis",
-        "position": "1st",
-        "date": "2022"
-    },
-    {
-        "title": "HackDavis",
-        "position": "2nd",
+        "position": "2nd Place",
         "date": "2021"
     },
     {
