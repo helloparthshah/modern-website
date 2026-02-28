@@ -1,7 +1,7 @@
 {
-    "email": "helloparthshah+contact@gmail.com",
+    "email": "helloparthshah@gmail.com",
     "name": "Parth Shah",
-    "intro": "I am Parth Shah, a Software Engineer at Amazon with a B.S. in Computer Science and Engineering from UC Davis. I'm currently working on Amazon's catalog contribution ingestion pipeline and have experience with GenAI listing tools. I've also contributed to projects like gem5 Vision, QuixFolio, and Stadia Wireless, showcasing my skills in web development, mobile app development, and cloud technologies.",
+    "intro": "I am Parth Shah, a Software Development Engineer 2 (SDE 2) at Amazon specializing in infrastructure and agentic systems. Currently, I am engineering core components for Amazon's agent-first global 'World Catalog' and Progressive GenAI Listing Experience. I am the co-creator of the NAAMSE and HASHIRU AI frameworks, focusing on evolutionary security evaluation and budget-aware multi-agent orchestration. With a B.S. in Computer Science and Engineering from UC Davis, my expertise spans Large Language Models (LLMs), scalable cloud architecture, and open-source systems.",
     "image": "/images/parth.jpeg",
     "footerLinks": {
         "GitHub": "https://github.com/helloparthshah",
