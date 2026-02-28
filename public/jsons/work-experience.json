@@ -1,29 +1,20 @@
 [
     {
-        "title": "SDE 2",
-        "organization": "Amazon",
-        "start": "April 2025",
-        "end": "Ongoing",
-        "description": "Working on developing and maintaining Amazon's catalog contribution ingestion pipelineWorking on developing and maintaining Amazon's catalog contribution ingestion pipeline",
-        "location": "Sunnyvale, CA",
-        "image": "/images/amazon.gif"
-    },
-    {
-        "title": "SDE 1",
+        "title": "Software Development Engineer 2 (SDE 2)",
         "organization": "Amazon",
         "start": "July 2023",
-        "end": "April 2025",
-        "description": "https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-powered-product-listings Worked on allowing Amazon selling partners by using our GenAI listing tools to quickly and easily create high-quality product pages on Amazon.com.\nWorked on reducing shared code dependency for legacy systems by separating deployment pipelines reducing build times by over 80%",
+        "end": "Ongoing",
+        "description": "Spearheaded infrastructure for World Catalog, Amazon's pioneering agent-first global catalog, harmonizing non-Amazon product data for next-gen AI search. Architected the Progressive Listing Experience (PLE) using LLMs to autonomously map seller URLs to Amazon schema. Led a ground-up rewrite of the ingestion pipeline for async LLM workflows, enhanced system traceability, and optimized CI/CD pipelines to reduce build times by over 80%. Launched 3 microservices with a plugin architecture and 200+ custom rules for data validation and image enrichment.",
         "location": "Sunnyvale, CA",
         "image": "/images/amazon.gif"
     },
     {
-        "title": "SDE Intern",
+        "title": "SDE Intern, Item Pipeline",
         "organization": "Amazon",
         "start": "June 2022",
         "end": "Sep 2022",
-        "description": "Managed to create a Code Analyzerthat detects bugs and enforces coding practices before deployment which would be used by over 8 teams consisting of over 100 users\nWorked with Java and Typescript while building Lambdas, SNS Topics, Pipelines, VPCs, Hosted Zones.",
-        "location": "Seatle, WA",
+        "description": "Engineered a custom Code Analyzer to automate bug detection and enforce coding standards, adopted by 100+ engineers across 8 teams. Architected and deployed scalable serverless microservices for the Item Pipeline utilizing Java, TypeScript, AWS Lambda, Amazon SNS, and VPCs.",
+        "location": "Sunnyvale, CA",
         "image": "/images/amazon.gif"
     },
     {
@@ -31,7 +22,7 @@
         "organization": "Opal, LLC.",
         "start": "Sep 2021",
         "end": "June 2022",
-        "description": "Working with Flask, Django and, ReactJs to create a online NFT marketplace\nLeading the Social Media team which is developing a social media platform for users to interact with each other",
+        "description": "Engineered a scalable online NFT marketplace utilizing Flask, Django, and React.js. Spearheaded the Social Media team, leading the end-to-end development of an interactive platform for user engagement and digital asset sharing.",
         "location": "Remote",
         "image": "/images/opal.jpeg"
     },
@@ -40,7 +31,7 @@
         "organization": "Google Developer Student Club, UC Davis",
         "start": "February 2020",
         "end": "July 2022",
-        "description": "Created the website for Google Developer Student Club, UC Davis using dynamic JavaScript, HTML and CSS. Part of the team that created an Student taught Kotlin Android course.",
+        "description": "Architected the official GDSC UC Davis website using dynamic JavaScript, HTML, and CSS. Collaborated on the development of a student-led Kotlin Android development curriculum.",
         "location": "Davis, CA",
         "image": "/images/gdsc.webp"
     },
@@ -49,7 +40,7 @@
         "organization": "Bit Project",
         "start": "Oct 2019",
         "end": "Feb 2020",
-        "description": "Got the chance to work closely with companies such as MongoDB, Pusher and, Twitterto host workshops with 50+ audience members.\nCreated various tutorials and learnt MERN Stack, Twitter API, Website designing, JavaScript.",
+        "description": "Partnered with engineering teams at MongoDB, Pusher, and Twitter to develop and deliver technical workshops to 50+ attendees. Authored comprehensive technical tutorials focusing on the MERN stack and complex API integrations.",
         "location": "Davis, CA",
         "image": "/images/bit.png"
     },
@@ -58,7 +49,7 @@
         "organization": "Niyantras",
         "start": "May 2019",
         "end": "Aug 2020",
-        "description": "Helped to create a BLE based IOT solution forlow budget systems.\nWorked on researching different modules and programmed a Raspberry PI to interact with their mobile app",
+        "description": "Engineered a cost-effective, BLE-based IoT solution by integrating Raspberry Pi modules with a custom mobile application for real-time hardware interaction.",
         "location": "Vadodara, IN",
         "image": "/images/niyantras.png"
     }
