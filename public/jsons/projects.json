@@ -1,14 +1,35 @@
 [
     {
-        "title": "HashiruAI",
-        "start": "April 2025",
-        "end": "June 2025",
-        "description": "The Expert Orchestrator AI: Dynamically Adapting, Budget-Aware, and Precisely Tailored to Your Needs\nA dynamic multi-agent system achieves adaptability and intelligence through on-demand skill learning and information integration, while intelligently managing resources to minimize costs by using expensive models only when necessary for a personalized experience.",
+        "title": "NAAMSE",
+        "start": "Jan 2026",
+        "end": "Present",
+        "description": "Engineered the scalable core infrastructure for an evolutionary AI red-teaming framework and fuzzer, optimizing high-throughput execution pipelines for adversarial prompt injection. Architected data systems to support real-time attack mutation using genetic algorithms. Won 2nd place out of 1,500+ submissions at the Berkeley RDI AgentX competition; framework later forked by Mozilla's 0din team.",
         "skills": [
-            "Gradio",
-            "Hugging Face",
+            "Python",
             "Agentic AI",
-            "GenAI"
+            "GenAI",
+            "Red-Teaming",
+            "Fuzzing",
+            "Genetic Algorithms"
+        ],
+        "links": {
+            "Paper": "https://arxiv.org/abs/2602.07391",
+            "GitHub": "https://github.com/helloparthshah/NAAMSE"
+        },
+        "image": "/images/naamse.png"
+    },
+    {
+        "title": "HASHIRU",
+        "start": "Jan 2026",
+        "end": "March 2026",
+        "description": "Architected a budget-aware multi-agent orchestration framework (Hierarchical Agent System for Hybrid Intelligent Resource Utilization) enabling highly distributed workload management. Built robust cost-optimization controls to strictly manage resource compute constraints, inference expenses, and token budgeting across parallel LLM agent execution streams.",
+        "skills": [
+            "Python",
+            "LangGraph",
+            "Agentic AI",
+            "GenAI",
+            "Gradio",
+            "Hugging Face"
         ],
         "links": {
             "Paper": "https://arxiv.org/abs/2506.04255",
@@ -24,7 +45,7 @@
         "title": "gem5 Vision",
         "start": "Jan 2023",
         "end": "June 2023",
-        "description": "Improved the gem5 Resource Infrastructure by implementing advanced search functionality for resource discovery within the gem5 ecosystem.\nIntroduced a comprehensive resource categorization system, allowing users to access specific resource types based on the irrequirements.\nExpanded gem5's database support by integrating various options, providing users with multiple choices for storing,retrieving, and managing resources.",
+        "description": "Engineered advanced search functionality and a comprehensive categorization system for the gem5 Resource Infrastructure, enhancing resource discovery for computer architecture researchers. Architected extensible database integrations to support diverse storage and retrieval options, providing developers with robust tools for managing simulator resources.",
         "skills": [
             "NextJS",
             "ReactJS",
@@ -34,6 +55,7 @@
         ],
         "links": {
             "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+            "GitHub": "https://github.com/gem5",
             "Demo": "https://resources.gem5.org/"
         },
         "image": "/images/gem5.webp"
@@ -42,7 +64,7 @@
         "title": "QuixFolio",
         "start": "March 2023",
         "end": "April 2023",
-        "description": "QuixFolio is an easy-to-use tool that helps you build professional portfolios in just minutes.\nQuixFolio is completely open-source.\nSimply select a template, add your information, and QuixFolio will take care of the rest. It will even host your portfolio on GitHub pages for you!\nOver 190 visitors and 1000+ page views in the first week of alpha.",
+        "description": "An open-source, automated portfolio builder that allows users to deploy professional portfolios to GitHub Pages in minutes. Developed a template-driven engine that achieved over 1,000 page views in its first week of alpha launch.",
         "skills": [
             "ReactJS",
             "NextJS",
@@ -60,7 +82,7 @@
         "title": "Stadia Wireless",
         "start": "June 2022",
         "end": "July 2022",
-        "description": "Allows the Google Stadia Controllerto be used wirelessly with the use of websockets.\nHas 450+ stars and has been featured on multiple articles including The Verge, Ars Technica, and Digital Trends.",
+        "description": "Reverse-engineered and bypassed Google Stadia Controller hardware constraints, implementing a websocket-based architecture to enable universal wireless connectivity. Accumulated 450+ stars on GitHub and featured in major publications including The Verge and Ars Technica.",
         "skills": [
             "Python",
             "JavaScript",
@@ -77,7 +99,7 @@
         "title": "VeggieBuddie",
         "start": "Jan 2020",
         "end": "Jan 2020",
-        "description": "An app forthose with diet restrictions, tells if safe to eat using an image of the ingredients\nMost Social Good Hack, Second best use of Google Cloud Platform at HackDavis.\nOne of the top 20 solutions at Google's Solution Challenge.",
+        "description": "A diet-restriction assistant app that identifies safe-to-eat products by scanning ingredient images. Awarded 'Most Social Good Hack' at HackDavis and selected as a Top 20 global solution in the Google Solution Challenge.",
         "skills": [
             "Flutter",
             "Firebase",
@@ -94,7 +116,7 @@
         "title": "Other Projects",
         "start": "Oct 4, 2001",
         "end": "Present",
-        "description": "A dynamically curated list of my other projects.",
+        "description": "A dynamically curated list of my other open-source contributions and technical experiments.",
         "skills": [],
         "links": {
             "Website": "https://helloparthshah.github.io/",
