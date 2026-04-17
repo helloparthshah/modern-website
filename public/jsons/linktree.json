@@ -16,5 +16,19 @@
                 "url": "https://github.com/helloparthshah"
             }
         ]
+    },
+    {
+        "path": "naamse",
+        "title": "NAAMSE",
+        "links": [
+            {
+                "label": "Paper",
+                "url": "https://arxiv.org/abs/2602.07391"
+            },
+            {
+                "label": "Website",
+                "url": "https://naamse.com/"
+            }
+        ]
     }
 ]
