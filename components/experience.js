@@ -64,6 +64,7 @@ function TimelineItem({ experience }) {
                                         <div className="ps-muted small">{role.location}</div>
                                     )}
                                     <Bullets description={role.description} />
+                                    <RoleLinks links={role.links} />
                                 </div>
                             ))}
                         </div>
@@ -81,6 +82,17 @@ function TimelineItem({ experience }) {
                     </>
                 )}
             </div>
+        </div>
+    );
+}
+
+function RoleLinks({ links }) {
+    if (!links) return null;
+    return (
+        <div className="project-links pt-1">
+            {Object.entries(links).map(([name, href]) => (
+                <a key={name} href={href} target="_blank" rel="noreferrer">{name} ↗</a>
+            ))}
         </div>
     );
 }
