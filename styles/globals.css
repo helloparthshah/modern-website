@@ -1130,3 +1130,167 @@ html[data-bs-theme="dark"] .timeline-logo {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* ======================================================================
+   Departure-board theme: amber accent, warm greys, flatter surfaces.
+   Overrides the earlier tokens and effects above.
+   ====================================================================== */
+:root,
+html[data-bs-theme="light"] {
+  --ps-bg: #f7f6f3;
+  --ps-card: #ffffff;
+  --ps-border: #e4e1da;
+  --ps-text: #1c1b19;
+  --ps-muted: #6b675f;
+  --ps-accent: #b45309;
+  --ps-accent-soft: rgba(180, 83, 9, 0.12);
+  --ps-chip: #efece6;
+  --ps-btn-primary: #1c1b19;
+  --ps-btn-primary-text: #ffffff;
+  --ps-shadow: none;
+  --ps-shadow-hover: none;
+  --ps-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+html[data-bs-theme="dark"] {
+  --ps-bg: #121211;
+  --ps-card: #1a1a18;
+  --ps-border: #2c2b28;
+  --ps-text: #ecebe7;
+  --ps-muted: #9c988f;
+  --ps-accent: #f2a93b;
+  --ps-accent-soft: rgba(242, 169, 59, 0.14);
+  --ps-chip: #24231f;
+  --ps-btn-primary: #f2a93b;
+  --ps-btn-primary-text: #121211;
+}
+
+/* No decorative glows */
+.hero::before,
+.page-header::before {
+  display: none;
+}
+
+/* Board-style labels */
+.hero-tagline {
+  font-family: var(--ps-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ps-accent);
+}
+
+.ps-chip {
+  font-family: var(--ps-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  background: var(--ps-chip);
+  color: var(--ps-muted);
+}
+
+.timeline-date {
+  font-family: var(--ps-mono);
+  font-size: 0.8rem;
+}
+
+/* Flatter cards: border only, no lift or zoom */
+.experience,
+.ps-card {
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.ps-card:hover,
+.experience:hover,
+.project-card:hover,
+.blog-card:hover,
+.board-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--ps-muted);
+}
+
+.project-card:hover .project-image img,
+.blog-card:hover .blog-card-image img {
+  transform: none;
+}
+
+.timeline-logo,
+.post-image,
+.linktree-avatar {
+  box-shadow: none;
+}
+
+/* Buttons */
+.ps-btn {
+  border-radius: 8px;
+}
+
+.ps-btn:hover {
+  transform: none;
+}
+
+.ps-btn-primary,
+.ps-btn-primary:hover {
+  background: var(--ps-btn-primary);
+  border-color: var(--ps-btn-primary);
+  color: var(--ps-btn-primary-text);
+}
+
+.ps-btn-primary:hover {
+  filter: none;
+  opacity: 0.88;
+  color: var(--ps-btn-primary-text);
+}
+
+.linktree-link {
+  box-shadow: none;
+}
+
+/* Quieter bullets; accent reserved for links and markers that matter */
+.ps-bullets li::marker {
+  color: var(--ps-muted);
+}
+
+.ps-search input {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.ps-search #search-icon {
+  border-radius: 0 8px 8px 0;
+}
+
+.award-icon {
+  border-radius: 8px;
+}
+
+.section-title::after {
+  background: var(--ps-border);
+}
+
+/* Publication badges match the other tags */
+.experience .badge.bg-secondary {
+  background: var(--ps-chip) !important;
+  color: var(--ps-muted) !important;
+  font-family: var(--ps-mono);
+  font-weight: 400;
+  font-size: 0.72rem;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+
+.experience .btn-outline-secondary {
+  border-radius: 8px;
+  border-color: var(--ps-border);
+  color: var(--ps-text);
+}
+
+.experience .btn-outline-secondary:hover {
+  background: transparent;
+  border-color: var(--ps-muted);
+  color: var(--ps-text);
+}
