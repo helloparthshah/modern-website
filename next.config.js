@@ -18,6 +18,10 @@ const nextConfig = {
     });
     return config;
   },
+  async rewrites() {
+    // The resume is built in the helloparthshah/resume repo; see pages/api/resume.js.
+    return [{ source: '/resume.pdf', destination: '/api/resume' }];
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
