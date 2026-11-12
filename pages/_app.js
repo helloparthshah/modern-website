@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '@/styles/globals.css'
+import '@/styles/designs.css'
 import "@/styles/flipBoard.scss";
 import Layout from '@/components/layout';
 import Head from 'next/head';

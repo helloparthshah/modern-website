@@ -1,0 +1,707 @@
+/* ======================================================================
+   Design switcher
+   ====================================================================== */
+.design-switcher {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 8px;
+  background: var(--ps-card);
+  border: 1px solid var(--ps-border);
+  font-size: 0.8rem;
+}
+
+.design-switcher-label {
+  padding: 0 0.5rem;
+  color: var(--ps-muted);
+  font-family: var(--ps-mono);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+.design-switcher button {
+  border: 0;
+  background: transparent;
+  color: var(--ps-text);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.design-switcher button.active {
+  background: var(--ps-text);
+  color: var(--ps-bg);
+}
+
+/* ======================================================================
+   Wiki design
+   ====================================================================== */
+html[data-design="wiki"] {
+  --ps-bg: #ffffff;
+  --ps-card: #ffffff;
+  --ps-border: #a2a9b1;
+  --ps-text: #202122;
+  --ps-muted: #54595d;
+  --ps-accent: #3366cc;
+  --ps-accent-soft: rgba(51, 102, 204, 0.12);
+  --ps-chip: #eaecf0;
+  --ps-btn-primary: #3366cc;
+  --ps-btn-primary-text: #ffffff;
+  --wiki-link: #3366cc;
+  --wiki-link-visited: #795cb2;
+  --wiki-box: #f8f9fa;
+  --wiki-serif: "Linux Libertine", "Gelasio", "Georgia", "Times", serif;
+}
+
+html[data-design="wiki"][data-bs-theme="dark"] {
+  --ps-bg: #101418;
+  --ps-card: #101418;
+  --ps-border: #54595d;
+  --ps-text: #eaecf0;
+  --ps-muted: #a2a9b1;
+  --ps-accent: #88a3e8;
+  --ps-chip: #27292d;
+  --ps-btn-primary: #88a3e8;
+  --ps-btn-primary-text: #101418;
+  --wiki-link: #88a3e8;
+  --wiki-link-visited: #a799cd;
+  --wiki-box: #202122;
+}
+
+html[data-design="wiki"] body {
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  background: var(--ps-bg);
+}
+
+html[data-design="wiki"] a {
+  color: var(--wiki-link);
+  text-decoration: none;
+}
+
+html[data-design="wiki"] a:hover {
+  text-decoration: underline;
+}
+
+html[data-design="wiki"] .navbar {
+  border-bottom: 1px solid var(--ps-border);
+}
+
+/* Inner pages pick up serif headings and flat boxes */
+html[data-design="wiki"] .page-title,
+html[data-design="wiki"] .section-title,
+html[data-design="wiki"] .home h1 {
+  font-family: var(--wiki-serif);
+  font-weight: 400;
+}
+
+html[data-design="wiki"] .page-title {
+  border-bottom: 1px solid var(--ps-border);
+  padding-bottom: 0.25rem;
+}
+
+html[data-design="wiki"] .hero-tagline {
+  font-family: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ps-muted);
+  font-size: 0.85rem;
+}
+
+html[data-design="wiki"] .ps-card,
+html[data-design="wiki"] .experience {
+  border-radius: 2px;
+  border-color: var(--ps-border);
+  background: var(--wiki-box);
+}
+
+html[data-design="wiki"] .ps-btn {
+  border-radius: 2px;
+}
+
+html[data-design="wiki"] .ps-chip {
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+.wiki-container {
+  max-width: 1080px;
+  padding-top: 1.5rem;
+}
+
+.wiki {
+  color: var(--ps-text);
+  line-height: 1.6;
+}
+
+.wiki::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.wiki-tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ps-border);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.wiki-tabs > div {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.wiki-tabs span,
+.wiki-tabs a {
+  padding: 0.35rem 0;
+  color: var(--wiki-link);
+}
+
+.wiki-tabs .active {
+  color: var(--ps-text);
+  border-bottom: 2px solid var(--ps-text);
+  margin-bottom: -1px;
+}
+
+.wiki-title {
+  font-family: var(--wiki-serif) !important;
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--ps-border);
+}
+
+.wiki-tagline {
+  font-size: 0.85rem;
+  color: var(--ps-muted);
+  margin: 0.4rem 0 1rem;
+}
+
+.wiki h2 {
+  font-family: var(--wiki-serif);
+  font-weight: 400;
+  font-size: 1.6rem;
+  border-bottom: 1px solid var(--ps-border);
+  margin: 1.75rem 0 0.6rem;
+  padding-bottom: 0.15rem;
+}
+
+.wiki h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.wiki h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.9rem 0 0.3rem;
+}
+
+.wiki-dates {
+  font-weight: 400;
+  color: var(--ps-muted);
+  font-size: 0.9em;
+}
+
+.wiki p {
+  margin: 0.5rem 0;
+}
+
+.wiki ul {
+  padding-left: 1.6rem;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.wiki ul li {
+  list-style: square;
+  margin-bottom: 0.15rem;
+}
+
+.wiki-role,
+.wiki-see {
+  color: var(--ps-muted);
+  font-style: italic;
+}
+
+.wiki-see a {
+  font-style: normal;
+  margin-right: 0.75rem;
+}
+
+.wiki-infobox {
+  float: right;
+  clear: right;
+  width: 300px;
+  margin: 0 0 1rem 1.5rem;
+  padding: 0.4rem;
+  border: 1px solid var(--ps-border);
+  background: var(--wiki-box);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.wiki-infobox-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.2rem 0 0.4rem;
+}
+
+.wiki-infobox-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.wiki-infobox-caption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ps-muted);
+  padding: 0.3rem 0 0.5rem;
+}
+
+.wiki-infobox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.wiki-infobox th,
+.wiki-infobox td {
+  vertical-align: top;
+  padding: 0.25rem 0.3rem;
+  border-top: 1px solid var(--ps-border);
+}
+
+.wiki-infobox th {
+  width: 34%;
+  font-weight: 700;
+}
+
+.wiki-toc {
+  display: inline-block;
+  min-width: 260px;
+  border: 1px solid var(--ps-border);
+  background: var(--wiki-box);
+  padding: 0.6rem 1.1rem 0.6rem 0.9rem;
+  margin: 0.8rem 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.wiki-toc-title {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.wiki-toc ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.wiki-toc ol ol {
+  padding-left: 1.4rem;
+}
+
+.wiki-toc-num {
+  color: var(--ps-text);
+  margin-right: 0.3rem;
+}
+
+.wiki-thumb {
+  float: right;
+  clear: right;
+  width: 232px;
+  margin: 0.2rem 0 0.8rem 1.25rem;
+  padding: 4px;
+  border: 1px solid var(--ps-border);
+  background: var(--wiki-box);
+}
+
+.wiki-thumb-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.wiki-thumb figcaption {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.1rem 0.1rem;
+  color: var(--ps-text);
+}
+
+.wiki section {
+  display: flow-root;
+}
+
+.wiki h2,
+.wiki-refs,
+.wiki-table {
+  clear: both;
+}
+
+.wiki-refs {
+  font-size: 0.92rem;
+  padding-left: 1.8rem;
+}
+
+.wiki-refs li {
+  margin-bottom: 0.35rem;
+}
+
+.wiki-table {
+  border-collapse: collapse;
+  background: var(--wiki-box);
+  font-size: 0.92rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.wiki-table th,
+.wiki-table td {
+  border: 1px solid var(--ps-border);
+  padding: 0.3rem 0.6rem;
+}
+
+.wiki-table th {
+  background: var(--ps-chip);
+  text-align: center;
+}
+
+.wiki-external::after {
+  content: " ↗";
+  font-size: 0.8em;
+}
+
+@media (max-width: 786px) {
+  .wiki-infobox,
+  .wiki-thumb {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  .wiki-tabs > div:last-child {
+    display: none;
+  }
+}
+
+/* ======================================================================
+   Chalkboard (hand-drawn) design. Same board in light and dark mode,
+   one handwritten font throughout.
+   ====================================================================== */
+html[data-design="sketch"],
+html[data-design="sketch"][data-bs-theme="dark"],
+html[data-design="sketch"][data-bs-theme="light"] {
+  color-scheme: dark;
+  --ps-bg: #263a33;
+  --ps-card: rgba(255, 255, 255, 0.025);
+  --ps-border: rgba(241, 239, 230, 0.72);
+  --ps-text: #f1efe6;
+  --ps-muted: #c3c7bb;
+  --ps-accent: #ffe08a;
+  --ps-accent-soft: rgba(255, 224, 138, 0.15);
+  --ps-chip: transparent;
+  --ps-btn-primary: #f1efe6;
+  --ps-btn-primary-text: #263a33;
+  --chalk-yellow: #ffe08a;
+  --chalk-pink: #ffb3c7;
+  --chalk-blue: #a9d8ff;
+  --chalk-font: "Patrick Hand", "Comic Sans MS", cursive;
+  --chalk-glow: 0 0 1px rgba(255, 255, 255, 0.35), 0 0 3px rgba(255, 255, 255, 0.08);
+  --sk-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --sk-radius-2: 15px 255px 15px 225px / 225px 15px 255px 15px;
+  --bs-body-color: #f1efe6;
+  --bs-heading-color: #f1efe6;
+  --bs-secondary-color: #c3c7bb;
+}
+
+html[data-design="sketch"] body {
+  font-family: var(--chalk-font);
+  font-size: 1.15rem;
+  color: var(--ps-text);
+  text-shadow: var(--chalk-glow);
+  background-color: var(--ps-bg);
+  /* Smudges left by an eraser, plus fine chalk dust */
+  background-image:
+    radial-gradient(60% 40% at 20% 15%, rgba(255, 255, 255, 0.05), transparent 70%),
+    radial-gradient(50% 35% at 80% 45%, rgba(255, 255, 255, 0.04), transparent 70%),
+    radial-gradient(55% 40% at 30% 80%, rgba(255, 255, 255, 0.035), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-attachment: scroll;
+}
+
+html[data-design="sketch"] *:not(.flap-tile):not(.flap-tile *) {
+  font-family: var(--chalk-font) !important;
+}
+
+html[data-design="sketch"] h1,
+html[data-design="sketch"] h2,
+html[data-design="sketch"] h3,
+html[data-design="sketch"] h4,
+html[data-design="sketch"] h5,
+html[data-design="sketch"] h6 {
+  color: var(--ps-text);
+  font-weight: 400;
+}
+
+/* Navbar and footer sit on the same board */
+html[data-design="sketch"] .navbar {
+  background: rgba(20, 32, 28, 0.85) !important;
+  border-bottom: 3px solid #6b4a2b;
+}
+
+html[data-design="sketch"] .navbar .nav-link,
+html[data-design="sketch"] .navbar a,
+html[data-design="sketch"] .ps-footer,
+html[data-design="sketch"] .ps-footer a {
+  color: var(--ps-text) !important;
+}
+
+html[data-design="sketch"] .navbar svg path {
+  fill: var(--ps-text);
+}
+
+html[data-design="sketch"] .navbar .btn {
+  color: var(--ps-text);
+  border-color: var(--ps-border);
+  background: transparent;
+}
+
+html[data-design="sketch"] .navbar .btn.active,
+html[data-design="sketch"] .navbar .btn-check:checked + .btn {
+  background: var(--ps-text);
+  color: var(--ps-bg);
+  text-shadow: none;
+}
+
+html[data-design="sketch"] .offcanvas {
+  background: var(--ps-bg);
+}
+
+html[data-design="sketch"] .ps-footer {
+  border-top: 2px dashed var(--ps-border);
+}
+
+/* Headings */
+html[data-design="sketch"] .section-title {
+  font-size: 2.6rem;
+}
+
+html[data-design="sketch"] .section-title::after {
+  height: 0;
+  background: none;
+  border-bottom: 2px solid var(--ps-border);
+  transform: rotate(-0.5deg);
+}
+
+html[data-design="sketch"] .page-title {
+  font-size: 3.2rem;
+}
+
+html[data-design="sketch"] h5 {
+  font-size: 1.55rem;
+}
+
+html[data-design="sketch"] h6,
+html[data-design="sketch"] .role h6 {
+  font-size: 1.3rem;
+  color: var(--chalk-yellow);
+}
+
+html[data-design="sketch"] .ps-muted,
+html[data-design="sketch"] .timeline-date,
+html[data-design="sketch"] .text-muted {
+  color: var(--ps-muted) !important;
+}
+
+html[data-design="sketch"] .timeline-date {
+  font-size: 1rem;
+}
+
+/* Chalk-outlined boxes */
+html[data-design="sketch"] .experience,
+html[data-design="sketch"] .ps-card {
+  background: var(--ps-card);
+  border: 2px solid var(--ps-border);
+  border-radius: var(--sk-radius);
+  box-shadow: 2px 3px 0 rgba(241, 239, 230, 0.16);
+}
+
+html[data-design="sketch"] .col:nth-child(even) .ps-card,
+html[data-design="sketch"] .timeline-item:nth-child(even) .ps-card {
+  border-radius: var(--sk-radius-2);
+}
+
+html[data-design="sketch"] .ps-card:hover,
+html[data-design="sketch"] .experience:hover {
+  border-color: var(--ps-text);
+  box-shadow: 2px 3px 0 rgba(241, 239, 230, 0.28);
+}
+
+html[data-design="sketch"] .project-card {
+  overflow: hidden;
+}
+
+html[data-design="sketch"] .col:nth-child(odd) .project-card { transform: rotate(-0.4deg); }
+html[data-design="sketch"] .col:nth-child(even) .project-card { transform: rotate(0.5deg); }
+
+html[data-design="sketch"] img {
+  filter: saturate(0.8) brightness(0.95);
+}
+
+html[data-design="sketch"] .project-image,
+html[data-design="sketch"] .blog-card-image {
+  background: transparent;
+  border-color: var(--ps-border);
+  border-style: dashed;
+  border-width: 0 0 2px;
+}
+
+html[data-design="sketch"] .blog-card-image {
+  border-width: 0 0 0 2px;
+}
+
+/* Chalk colours for small labels */
+html[data-design="sketch"] .hero-tagline {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.3rem;
+  color: var(--chalk-yellow);
+  transform: rotate(-1deg);
+  width: fit-content;
+}
+
+html[data-design="sketch"] .hero .description {
+  color: var(--ps-text);
+  font-size: 1.2rem;
+}
+
+html[data-design="sketch"] .ps-chip,
+html[data-design="sketch"] .experience .badge.bg-secondary {
+  font-size: 0.95rem !important;
+  background: transparent !important;
+  color: var(--chalk-blue) !important;
+  border: 1.5px solid rgba(169, 216, 255, 0.6);
+  border-radius: 3px 8px 4px 7px;
+}
+
+html[data-design="sketch"] .project-links a,
+html[data-design="sketch"] .prose a,
+html[data-design="sketch"] .award-card a,
+html[data-design="sketch"] .contact-card a,
+html[data-design="sketch"] .post-back {
+  color: var(--chalk-pink);
+  text-decoration: underline wavy;
+  text-underline-offset: 4px;
+  border: 0;
+}
+
+/* Buttons and inputs */
+html[data-design="sketch"] .ps-btn,
+html[data-design="sketch"] .experience .btn-outline-secondary,
+html[data-design="sketch"] .ps-input,
+html[data-design="sketch"] .ps-search input {
+  background: transparent;
+  color: var(--ps-text);
+  border: 2px solid var(--ps-border);
+  border-radius: var(--sk-radius);
+  box-shadow: none;
+}
+
+html[data-design="sketch"] .ps-input::placeholder,
+html[data-design="sketch"] .ps-search input::placeholder {
+  color: var(--ps-muted);
+}
+
+html[data-design="sketch"] .ps-btn:hover {
+  border-color: var(--chalk-yellow);
+  color: var(--chalk-yellow);
+}
+
+html[data-design="sketch"] .ps-btn-primary,
+html[data-design="sketch"] .ps-btn-primary:hover {
+  background: transparent;
+  color: var(--chalk-yellow);
+  border-color: var(--chalk-yellow);
+}
+
+/* Photo framed with a chalk outline */
+html[data-design="sketch"] .hero .animate::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 2px solid var(--ps-border);
+  border-radius: 58% 42% 50% 50% / 50% 55% 45% 50%;
+  pointer-events: none;
+}
+
+/* Timeline drawn as dashed chalk */
+html[data-design="sketch"] .timeline-logo {
+  border: 2px solid var(--ps-border);
+}
+
+html[data-design="sketch"] .timeline-item:not(:last-child)::before,
+html[data-design="sketch"] .role:not(:last-child)::after {
+  background: none;
+  border-left: 2px dashed var(--ps-border);
+  width: 0;
+}
+
+html[data-design="sketch"] .role::before {
+  background: transparent;
+  border: 2px solid var(--chalk-yellow);
+  box-shadow: none;
+}
+
+html[data-design="sketch"] .ps-bullets li::marker,
+html[data-design="sketch"] .prose li::marker {
+  color: var(--ps-muted);
+}
+
+html[data-design="sketch"] .award-icon {
+  background: transparent;
+  border: 2px solid var(--chalk-yellow);
+  border-radius: 50% 45% 55% 50%;
+}
+
+html[data-design="sketch"] .award-icon svg {
+  fill: var(--chalk-yellow) !important;
+}
+
+html[data-design="sketch"] .prose pre,
+html[data-design="sketch"] .prose code {
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--ps-text);
+}
+
+html[data-design="sketch"] .prose pre *,
+html[data-design="sketch"] .prose code {
+  font-family: ui-monospace, Menlo, monospace !important;
+}
+
+html[data-design="sketch"] .flap-board {
+  transform: rotate(-1deg);
+}
+
+html[data-design="sketch"] .design-switcher {
+  background: rgba(20, 32, 28, 0.9);
+  border: 2px solid var(--ps-border);
+  border-radius: var(--sk-radius);
+}
+
+html[data-design="sketch"] .design-switcher button.active {
+  text-shadow: none;
+}
+
+html[data-design="sketch"] .scrollToTopBtn {
+  background: var(--ps-text);
+}

@@ -11,8 +11,18 @@ import Education from '@/components/education';
 import Link from 'next/link';
 import SectionTitle from '@/components/sectionTitle';
 import useReveal from '@/components/reveal';
+import WikiHome from '@/components/wikiHome';
+import { useDesign } from '@/components/design';
 
 export default function Home() {
+  const { design } = useDesign();
+  if (design === "wiki") {
+    return (
+      <Containter className='home wiki-container'>
+        <WikiHome />
+      </Containter>
+    );
+  }
   return (
     <Containter className='home'>
       <Hello />

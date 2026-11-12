@@ -17,7 +17,10 @@
                 "title": "Software Development Engineer 1",
                 "start": "July 2023",
                 "end": "April 2025",
-                "description": "Architected the Progressive Listing Experience, using LLMs to turn a seller's product URL into an Amazon listing.\nBuilt and maintained Amazon's catalog contribution ingestion pipeline."
+                "description": "Architected the Progressive Listing Experience, using LLMs to turn a seller's product URL into an Amazon listing.\nBuilt and maintained Amazon's catalog contribution ingestion pipeline.",
+                "links": {
+                    "Progressive Listing Experience on About Amazon": "https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-powered-product-listings"
+                }
             },
             {
                 "title": "SDE Intern, Item Pipeline",
