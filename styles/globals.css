@@ -689,3 +689,32 @@ main {
 .award-card a:hover {
   text-decoration: underline;
 }
+
+/* Dark mode polish */
+:root,
+html[data-bs-theme="light"] {
+  --ps-btn-primary: #4f46e5;
+  --ps-glow-warm: rgba(245, 158, 11, 0.1);
+}
+
+html[data-bs-theme="dark"] {
+  --ps-btn-primary: #5b5bd6;
+  --ps-glow-warm: rgba(245, 158, 11, 0.04);
+}
+
+.ps-btn-primary,
+.ps-btn-primary:hover {
+  background: var(--ps-btn-primary);
+  border-color: var(--ps-btn-primary);
+}
+
+.hero::before {
+  background:
+    radial-gradient(40% 60% at 25% 35%, var(--ps-accent-soft), transparent 70%),
+    radial-gradient(35% 50% at 80% 20%, var(--ps-glow-warm), transparent 70%);
+}
+
+html[data-bs-theme="dark"] .timeline-logo {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
