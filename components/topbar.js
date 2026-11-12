@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import linktree from "@/public/jsons/linktree.json";
+import { getPref, setPref } from "./prefs";
 
 export default function Topbar() {
   const [show, setShow] = useState(false);
@@ -37,13 +38,12 @@ export default function Topbar() {
   }
   useEffect(() => {
     // check local storage for preference
-    const theme = localStorage.getItem("theme");
-    console.log(theme);
+    const theme = getPref("theme");
     if (theme) {
       setTheme(theme);
     } else {
       setTheme("auto");
-      localStorage.setItem("theme", "auto");
+      setPref("theme", "auto");
     }
     if (theme === "dark") {
       toggleMode(true);
@@ -215,7 +215,7 @@ export default function Topbar() {
                     value={radio.value}
                     checked={theme === radio.value}
                     onChange={(e) => {
-                      localStorage.setItem("theme", e.currentTarget.value);
+                      setPref("theme", e.currentTarget.value);
                       setTheme(e.currentTarget.value);
                       if (e.currentTarget.value === "auto") {
                         toggleMode(

@@ -11,6 +11,18 @@ import educations from "/public/jsons/education.json";
 const lines = (text) => (text ? text.split("\n").filter(Boolean) : []);
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
+// Links known names (companies, projects, school) inside plain text and bolds the subject's name.
+function linkify(text, terms, boldName) {
+  const keys = Object.keys(terms).sort((a, b) => b.length - a.length);
+  const pattern = new RegExp(`(${[boldName, ...keys].map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+  let boldDone = false;
+  return text.split(pattern).map((part, i) => {
+    if (part === boldName && !boldDone) { boldDone = true; return <b key={i}>{part}</b>; }
+    if (terms[part]) return <a key={i} href={terms[part]}>{part}</a>;
+    return part;
+  });
+}
+
 function roleRange(entry) {
   if (entry.roles) return `${entry.roles[entry.roles.length - 1].start} - ${entry.roles[0].end}`;
   return `${entry.start} - ${entry.end}`;
@@ -31,44 +43,63 @@ export default function WikiHome() {
     { id: "external-links", title: "External links" },
   ];
 
+  const wiki = config.wiki ?? {};
+  const current = workExperience[0];
+  const terms = {
+    ...Object.fromEntries(workExperience.map((w) => [w.organization, `#${slug(w.organization)}`])),
+    ...Object.fromEntries(realProjects.map((p) => [p.title, `#${slug(p.title)}`])),
+    ...Object.fromEntries(educations.map((e) => [e.university, "#education"])),
+  };
+  const sourceLink = links["Website Source"];
+  const profileLinks = Object.entries(links).filter(([k]) => k !== "Website Source").slice(0, 2);
+
   return (
     <div className="wiki">
       <div className="wiki-tabs">
         <div><span className="active">Article</span><span>Talk</span></div>
-        <div><span className="active">Read</span><a href="https://github.com/helloparthshah/modern-website" target="_blank" rel="noreferrer">Edit</a><span>View history</span></div>
+        <div>
+          <span className="active">Read</span>
+          {sourceLink && <a href={sourceLink} target="_blank" rel="noreferrer">Edit</a>}
+          <span>View history</span>
+        </div>
       </div>
 
       <h1 className="wiki-title">{config.name}</h1>
-      <div className="wiki-tagline">From the personal encyclopedia of {config.name}</div>
+      {wiki.tagline && <div className="wiki-tagline">{wiki.tagline}</div>}
 
       <aside className="wiki-infobox">
         <div className="wiki-infobox-title">{config.name}</div>
         <div className="wiki-infobox-image">
-          <Image src={config.image} alt={config.name} fill sizes="260px" style={{ objectFit: "cover" }} />
+          <Image src={config.image} alt={config.name} fill sizes="300px" style={{ objectFit: "cover" }} />
         </div>
-        <div className="wiki-infobox-caption">Shah at UC Davis</div>
+        {wiki.imageCaption && <div className="wiki-infobox-caption">{wiki.imageCaption}</div>}
         <table>
           <tbody>
-            <tr><th>Occupation</th><td>Software engineer</td></tr>
-            <tr><th>Employer</th><td><a href="#amazon">Amazon</a> (2022 - present)</td></tr>
-            <tr><th>Education</th><td><a href="#education">{edu.university}</a> ({edu.degree}, {edu.end})</td></tr>
-            <tr><th>Known for</th><td>{realProjects.slice(0, 4).map((p, i) => (
-              <span key={p.title}><a href={`#${slug(p.title)}`}>{p.title}</a>{i < 3 ? ", " : ""}</span>))}</td></tr>
-            <tr><th>Awards</th><td>{awards[0].position}, {awards[0].title} ({awards[0].date})</td></tr>
-            <tr><th>Website</th><td>{Object.entries(links).slice(0, 2).map(([k, v], i) => (
-              <span key={k}><a href={v} target="_blank" rel="noreferrer">{k}</a>{i < 1 ? " · " : ""}</span>))}</td></tr>
+            {wiki.occupation && <tr><th>Occupation</th><td>{wiki.occupation}</td></tr>}
+            {current && (
+              <tr><th>Employer</th><td><a href={`#${slug(current.organization)}`}>{current.organization}</a> ({roleRange(current)})</td></tr>
+            )}
+            {edu && (
+              <tr><th>Education</th><td><a href="#education">{edu.university}</a> ({edu.degree}, {edu.end})</td></tr>
+            )}
+            {realProjects.length > 0 && (
+              <tr><th>Known for</th><td>{realProjects.slice(0, 4).map((p, i, arr) => (
+                <span key={p.title}><a href={`#${slug(p.title)}`}>{p.title}</a>{i < arr.length - 1 ? ", " : ""}</span>))}</td></tr>
+            )}
+            {awards[0] && (
+              <tr><th>Awards</th><td>{awards[0].position}, {awards[0].title} ({awards[0].date})</td></tr>
+            )}
+            {profileLinks.length > 0 && (
+              <tr><th>Website</th><td>{profileLinks.map(([k, v], i) => (
+                <span key={k}><a href={v} target="_blank" rel="noreferrer">{k}</a>{i < profileLinks.length - 1 ? " · " : ""}</span>))}</td></tr>
+            )}
           </tbody>
         </table>
       </aside>
 
-      <p className="wiki-lead">
-        <b>{config.name}</b> is a software engineer at <a href="#amazon">Amazon</a>, working on agentic AI systems
-        and infrastructure. At Amazon, Shah leads a cross-org effort to automate ticket investigation with AI agents
-        and worked on the seller contribution pipeline behind <a href="#amazon">World Catalog</a>. Outside work, Shah
-        co-created the open-source frameworks <a href="#naamse">NAAMSE</a> and <a href="#hashiru">HASHIRU</a>, and
-        built the decentralized inference engine behind <a href="#kiwi">Kiwi</a>. Shah studied Computer Science
-        and Engineering at the <a href="#education">University of California, Davis</a>.
-      </p>
+      {(wiki.summary ?? [config.intro]).map((para, i) => (
+        <p key={i} className={i === 0 ? "wiki-lead" : undefined}>{linkify(para, terms, config.name)}</p>
+      ))}
       <p>
         A <a href="/resume.pdf" target="_blank" rel="noreferrer">résumé</a> is available.
       </p>
@@ -151,7 +182,7 @@ export default function WikiHome() {
       <h2 id="education">Education</h2>
       {educations.map((e) => (
         <p key={e.university}>
-          {e.degree} in {e.major}, <a href="https://www.ucdavis.edu/" target="_blank" rel="noreferrer">{e.university}</a> ({e.start} - {e.end}). GPA {e.gpa}. {e.description}.
+          {e.degree} in {e.major}, {e.url ? <a href={e.url} target="_blank" rel="noreferrer">{e.university}</a> : e.university} ({e.start} - {e.end}). {e.gpa && `GPA ${e.gpa}.`} {e.description && `${e.description}.`}
         </p>
       ))}
 

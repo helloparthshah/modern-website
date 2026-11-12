@@ -49,6 +49,12 @@ export default function Home() {
   );
 }
 
+// Reads the saved design from the cookie so the Wiki layout renders on the server.
+export function getServerSideProps({ req, query }) {
+  const design = query.design || req.cookies?.design || "default";
+  return { props: { initialDesign: design } };
+}
+
 function Award({ award }) {
   const ref = useReveal();
   return (

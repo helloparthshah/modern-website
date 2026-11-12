@@ -6,6 +6,7 @@
         "degree": "Bachelor of Science",
         "major": "Computer Science and Engineering",
         "gpa": "3.7",
-        "description": "Dean's List 2019-2020"
+        "description": "Dean's List 2019-2020",
+        "url": "https://www.ucdavis.edu/"
     }
 ]

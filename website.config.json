@@ -8,5 +8,39 @@
         "LinkedIn": "https://www.linkedin.com/in/helloparthshah/",
         "Instagram": "https://www.instagram.com/helloparthshah/",
         "Website Source": "https://github.com/helloparthshah/modern-website"
+    },
+    "tagline": "SDE 2 @ Amazon · Agentic AI · Infrastructure",
+    "credits": "Built by Kunal Pai, Parth Shah and Harshil Patel.",
+    "pages": {
+        "blogs": {
+            "eyebrow": "Writing",
+            "title": "Blogs",
+            "subtitle": "Notes on projects, experiments and whatever else I'm building."
+        },
+        "about": {
+            "eyebrow": "About this site",
+            "title": "About",
+            "subtitle": "A personal portfolio template you can fork and make your own."
+        },
+        "linktree": {
+            "eyebrow": "Links",
+            "title": "Linktree Boards",
+            "subtitle": "Quick link collections for socials and projects."
+        },
+        "contact": {
+            "eyebrow": "Contact",
+            "title": "Get in Touch",
+            "subtitle": "Have a question, an idea, or just want to say hi? Send me a message and I'll get back to you.",
+            "noteLabel": "Add a handwritten note (optional)"
+        }
+    },
+    "wiki": {
+        "tagline": "From the personal encyclopedia of Parth Shah",
+        "imageCaption": "Shah at UC Davis",
+        "occupation": "Software engineer",
+        "summary": [
+            "Parth Shah is a software engineer at Amazon, working on agentic AI systems and infrastructure. At Amazon, Shah leads a cross-org effort to automate ticket investigation with AI agents and worked on the seller contribution pipeline behind World Catalog.",
+            "Outside work, Shah co-created the open-source frameworks NAAMSE and HASHIRU, and built the decentralized inference engine behind Kiwi. Shah studied Computer Science and Engineering at the University of California, Davis."
+        ]
     }
 }

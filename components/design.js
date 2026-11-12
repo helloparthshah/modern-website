@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { getPref, setPref } from "./prefs";
 
 // Alternate site designs that can be tried side by side.
 export const DESIGNS = {
@@ -15,32 +16,42 @@ export const DESIGNS = {
 
 const DesignContext = createContext({ design: "default", setDesign: () => {} });
 
-export function DesignProvider({ children }) {
-  const [design, setDesignState] = useState("default");
+function loadFonts(design) {
+  const href = DESIGNS[design]?.fonts;
+  if (href && !document.querySelector(`link[data-design-font="${design}"]`)) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    link.dataset.designFont = design;
+    document.head.appendChild(link);
+  }
+}
+
+// initialDesign comes from the cookie on server-rendered pages.
+export function DesignProvider({ initialDesign, children }) {
+  const [design, setDesignState] = useState(DESIGNS[initialDesign] ? initialDesign : "default");
+  const resolved = useRef(false);
 
   useEffect(() => {
     const fromUrl = new URLSearchParams(window.location.search).get("design");
-    let saved = null;
-    try { saved = localStorage.getItem("design"); } catch (e) {}
+    const saved = getPref("design");
     const initial = DESIGNS[fromUrl] ? fromUrl : DESIGNS[saved] ? saved : "default";
+    resolved.current = true;
     setDesignState(initial);
+    setPref("design", initial);
+    document.documentElement.setAttribute("data-design", initial);
+    loadFonts(initial);
   }, []);
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-design", design);
-    try { localStorage.setItem("design", design); } catch (e) {}
-    const href = DESIGNS[design]?.fonts;
-    if (href && !document.querySelector(`link[data-design-font="${design}"]`)) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = href;
-      link.dataset.designFont = design;
-      document.head.appendChild(link);
-    }
-  }, [design]);
+  function setDesign(next) {
+    setDesignState(next);
+    setPref("design", next);
+    document.documentElement.setAttribute("data-design", next);
+    loadFonts(next);
+  }
 
   return (
-    <DesignContext.Provider value={{ design, setDesign: setDesignState }}>
+    <DesignContext.Provider value={{ design, setDesign }}>
       {children}
     </DesignContext.Provider>
   );

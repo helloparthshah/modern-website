@@ -15,7 +15,7 @@ const body = about.replace(/^#[^\n]*\n+(---\n+)?/, '');
 export default function About() {
     return (
         <Container className='about page'>
-            <PageHeader eyebrow="About this site" title="About" subtitle="A personal portfolio template you can fork and make your own." />
+            <PageHeader {...process.env.CONFIG.pages?.about} />
             <div className='ps-card prose-card'>
                 <ReactMarkdown
                     className='markdown-body prose'

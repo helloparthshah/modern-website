@@ -72,7 +72,7 @@ export default function Blogs() {
   }
   return (
     <Container className="blogs page">
-      <PageHeader eyebrow="Writing" title="Blogs" subtitle="Notes on projects, experiments and whatever else I'm building." />
+      <PageHeader {...process.env.CONFIG.pages?.blogs} />
       <Form className={"search-form ps-search w-100"} onSubmit={handleSubmit}>
         <Form.Control
           type="search"

@@ -20,7 +20,7 @@ function BoardCard({ group }) {
 export default function LinktreeLinks() {
   return (
     <Container className="page">
-      <PageHeader eyebrow="Links" title="Linktree Boards" subtitle="Quick link collections for socials and projects." center />
+      <PageHeader {...process.env.CONFIG.pages?.linktree} center />
       <Row xs={1} md={2} className="g-3 links-narrow">
         {linktree.map((group) => (
           <Col key={group.path}>

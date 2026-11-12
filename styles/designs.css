@@ -430,13 +430,29 @@ html[data-design="sketch"] body {
   color: var(--ps-text);
   text-shadow: var(--chalk-glow);
   background-color: var(--ps-bg);
-  /* Smudges left by an eraser, plus fine chalk dust */
+  /* Generated slate texture (scripts/chalkboard.py) with a soft vignette */
   background-image:
-    radial-gradient(60% 40% at 20% 15%, rgba(255, 255, 255, 0.05), transparent 70%),
-    radial-gradient(50% 35% at 80% 45%, rgba(255, 255, 255, 0.04), transparent 70%),
-    radial-gradient(55% 40% at 30% 80%, rgba(255, 255, 255, 0.035), transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-attachment: scroll;
+    radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.28)),
+    url("/images/chalkboard.jpg");
+  background-size: 100% 100%, 1024px 1024px;
+  background-attachment: fixed, scroll;
+  cursor: var(--chalk-cursor), auto;
+}
+
+html[data-design="sketch"] {
+  --chalk-cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cg transform='rotate(45 16 16)'%3E%3Crect x='12.5' y='1' width='7' height='24' rx='1.5' fill='%23f4f1e8' stroke='%238f8b80'/%3E%3Crect x='13.5' y='21' width='5' height='5' rx='1.2' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E") 8 24;
+}
+
+html[data-design="sketch"] a,
+html[data-design="sketch"] button,
+html[data-design="sketch"] .btn,
+html[data-design="sketch"] [role="button"] {
+  cursor: var(--chalk-cursor), pointer;
+}
+
+html[data-design="sketch"] input,
+html[data-design="sketch"] textarea {
+  cursor: text;
 }
 
 html[data-design="sketch"] *:not(.flap-tile):not(.flap-tile *) {
@@ -704,4 +720,87 @@ html[data-design="sketch"] .design-switcher button.active {
 
 html[data-design="sketch"] .scrollToTopBtn {
   background: var(--ps-text);
+}
+
+/* Chalk drawing layer */
+.chalk-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  pointer-events: none;
+}
+
+.chalk-canvas.drawing {
+  pointer-events: auto;
+  touch-action: none;
+  cursor: var(--chalk-cursor), crosshair;
+}
+
+.chalk-tray {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: rgba(20, 32, 28, 0.92);
+  border: 2px solid var(--ps-border);
+  border-radius: var(--sk-radius);
+  border-bottom: 5px solid #6b4a2b;
+}
+
+.chalk-tray button {
+  border: 0;
+  background: transparent;
+  color: var(--ps-text);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.chalk-tray button.active {
+  background: rgba(241, 239, 230, 0.15);
+}
+
+.chalk-tray button:disabled {
+  opacity: 0.4;
+}
+
+.chalk-tray .chalk-swatch {
+  width: 22px;
+  height: 10px;
+  padding: 0;
+  border-radius: 3px 6px 3px 5px;
+  background: var(--swatch);
+  opacity: 0.85;
+}
+
+.chalk-tray .chalk-swatch.active {
+  outline: 2px solid var(--ps-text);
+  outline-offset: 2px;
+  background: var(--swatch);
+}
+
+@media (max-width: 786px) {
+  .chalk-tray {
+    bottom: 4rem;
+  }
+}
+
+html[data-design="sketch"] .note-canvas {
+  background: rgba(0, 0, 0, 0.18);
+  border: 2px dashed var(--ps-border);
+  border-radius: var(--sk-radius);
+  cursor: var(--chalk-cursor), crosshair;
+}
+
+html[data-design="sketch"] .note-clear {
+  color: var(--chalk-pink);
+}
+
+/* Leave room so the chalk tray never covers the end of the page */
+html[data-design="sketch"] main {
+  padding-bottom: 4.5rem;
 }

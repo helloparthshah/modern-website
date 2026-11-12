@@ -63,7 +63,7 @@ export default function Hello() {
         <h1 className='name mb-3'>
           <FlipBoard text={config.name} />
         </h1>
-        <div className='hero-tagline'>SDE 2 @ Amazon · Agentic AI · Infrastructure</div>
+        {config.tagline && <div className='hero-tagline'>{config.tagline}</div>}
         <p className='description mb-0'>
           {config.intro}
         </p>

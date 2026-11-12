@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet"/>
       </Head>
-      <Layout>
+      <Layout initialDesign={pageProps.initialDesign}>
         <Component {...pageProps} />
       </Layout>
       <Analytics />

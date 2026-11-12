@@ -1294,3 +1294,42 @@ html[data-bs-theme="dark"] {
   border-color: var(--ps-muted);
   color: var(--ps-text);
 }
+
+/* Handwritten note pad on the contact form */
+.note-pad {
+  position: relative;
+}
+
+.note-canvas {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border: 1px dashed var(--ps-border);
+  border-radius: 12px;
+  background: var(--ps-bg);
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.note-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55%;
+  text-align: center;
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+
+.note-clear {
+  border: 0;
+  background: none;
+  color: var(--ps-accent);
+  font-size: 0.85rem;
+  padding: 0;
+}
+
+.note-clear:disabled {
+  color: var(--ps-muted);
+  opacity: 0.6;
+}

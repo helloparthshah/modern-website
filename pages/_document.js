@@ -1,4 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { bootScript } from '@/components/prefs'
+import { DESIGNS } from '@/components/design'
+
+const FONTS = Object.fromEntries(Object.entries(DESIGNS).filter(([, d]) => d.fonts).map(([k, d]) => [k, d.fonts]));
 
 /**
  * @component
@@ -7,8 +11,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 */
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en" suppressHydrationWarning>
       <Head>
+        <script dangerouslySetInnerHTML={{ __html: bootScript(FONTS) }} />
       </Head>
       <body>
         <Main />

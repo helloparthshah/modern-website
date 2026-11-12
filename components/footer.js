@@ -20,7 +20,7 @@ export default function Footer() {
           <Link key={key} href={links[key]} target="_blank">{key}</Link>
         ))}
       </div>
-      <p className="mb-1">Built by Kunal Pai, Parth Shah and Harshil Patel.</p>
+      {process.env.CONFIG.credits && <p className="mb-1">{process.env.CONFIG.credits}</p>}
       {lastUpdated && <p className="mb-0">Last updated {lastUpdated}</p>}
     </footer>
   );
