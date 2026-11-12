@@ -3,7 +3,7 @@
         "title": "Kiwi",
         "start": "July 2026",
         "end": "Oct 2026",
-        "description": "Built the peer-to-peer core of a system that splits an LLM across a swarm of small machines: libp2p tensor transport, worker registration and layer assignment.\nAdded fault tolerance with heartbeat-based eviction, worker re-registration and paged KV cache management.\nWe extended it into decentralized LoRA fine-tuning: 43% faster on 7 workers and instant recovery when a worker drops. Published at the NeurIPS 2026 CODEC-FM workshop.",
+        "description": "Built Kiwi's decentralized inference engine, which splits an LLM across a swarm of small machines and streams activations between them peer-to-peer over libp2p.\nHandles machines joining and dropping out with VRAM-aware layer assignment, heartbeat-based eviction, rerouting and paged KV cache management.\nHarshil built decentralized LoRA fine-tuning on top of it: 43% faster on 7 workers with instant recovery when a worker drops. Published at the NeurIPS 2026 CODEC-FM workshop.",
         "skills": [
             "Python",
             "PyTorch",
