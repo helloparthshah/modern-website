@@ -1,65 +1,51 @@
 import React, { useState } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Form, Container } from 'react-bootstrap';
+import PageHeader from '@/components/pageHeader';
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState({
-        name: '',
-        message: '',
-    });
+    const [formData, setFormData] = useState({ name: '', message: '' });
+    const email = process.env.CONFIG.email;
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-    };
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
-        // Handle form submission logic here (e.g., sending data to the server)
-        // run mailto: link
-        window.open(`mailto: ${process.env.CONFIG.email}?subject=Message from ${formData.name}&body=${formData.message}`);
-
-        console.log('Form data submitted:', formData);
-        // Reset the form after submission
-        setFormData({
-            name: '',
-            message: '',
-        });
-    };
+        // Opens the visitor's email app with the message filled in.
+        const subject = encodeURIComponent(`Message from ${formData.name}`);
+        const body = encodeURIComponent(formData.message);
+        window.open(`mailto:${email}?subject=${subject}&body=${body}`);
+        setFormData({ name: '', message: '' });
+    }
 
     return (
-        <Container className='contact'>
-            <h1>Get in Touch</h1>
-            <h6 className='text-secondary mb-3'>
-                Hello there! I believe that every interaction holds the potential to spark creativity, forge new partnerships, and foster a genuine exchange of ideas. So, whether you&apos;re a fellow enthusiast in the same field, an aspiring artist, a tech wizard, or just someone looking to explore new horizons, don&apos;t hesitate to reach out!
-            </h6>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formName">
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="formMessage">
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={4}
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                    />
-                </Form.Group>
-
-                <Button variant="secondary" type="submit" className='mt-3'>
-                    Submit
-                </Button>
-            </Form>
+        <Container className='contact page'>
+            <PageHeader
+                eyebrow="Contact"
+                title="Get in Touch"
+                subtitle="Have a question, an idea, or just want to say hi? Send me a message and I'll get back to you."
+                center
+            />
+            <div className='ps-card contact-card'>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group controlId="formName" className='mb-3'>
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control className='ps-input' type="text" name="name" placeholder="Your name"
+                            value={formData.name} onChange={handleChange} required />
+                    </Form.Group>
+                    <Form.Group controlId="formMessage" className='mb-3'>
+                        <Form.Label>Message</Form.Label>
+                        <Form.Control className='ps-input' as="textarea" rows={5} name="message" placeholder="What's on your mind?"
+                            value={formData.message} onChange={handleChange} required />
+                    </Form.Group>
+                    <div className='d-flex flex-wrap align-items-center justify-content-between gap-2'>
+                        <span className='ps-muted small'>Or email me at <a href={`mailto:${email}`}>{email}</a></span>
+                        <button type="submit" className='ps-btn ps-btn-primary'>Send message</button>
+                    </div>
+                </Form>
+            </div>
         </Container>
     );
-};
+}

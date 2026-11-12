@@ -5,6 +5,7 @@ import BlogTile from "@/components/blogTile";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { gsap } from "gsap";
+import PageHeader from "@/components/pageHeader";
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -18,7 +19,6 @@ export default function Blogs() {
     if (loading) return;
     // for each child of ref.current, animate it
     ref.current.childNodes.forEach((child) => {
-      console.log(child);
       gsap.from(child, {
         y: 24,
         opacity: 0,
@@ -71,11 +71,9 @@ export default function Blogs() {
     });
   }
   return (
-    <Container className="blogs">
-      <h1 className="text-center mt-5" style={{ fontSize: "3rem" }}>
-        Blogs
-      </h1>
-      <Form className={"search-form w-100"} onSubmit={handleSubmit}>
+    <Container className="blogs page">
+      <PageHeader eyebrow="Writing" title="Blogs" subtitle="Notes on projects, experiments and whatever else I'm building." />
+      <Form className={"search-form ps-search w-100"} onSubmit={handleSubmit}>
         <Form.Control
           type="search"
           name="search"
@@ -109,23 +107,15 @@ export default function Blogs() {
           Search
         </Button>
       </Form>
-      <hr />
-      <div ref={ref}>
+      <div ref={ref} className="blog-list">
         {loading ? (
           <div className="d-flex flex-column align-items-center justify-content-center p-5">
             <Spinner animation="border" />
           </div>
         ) : blogs.length === 0 ? (
-          <h2 className="text-center mt-5">No Blogs Found</h2>
+          <p className="text-center ps-muted mt-5">No blogs found.</p>
         ) : (
-          blogs.map((blog) => {
-            return (
-              <>
-                <BlogTile blog={blog} />
-                <hr />
-              </>
-            );
-          })
+          blogs.map((blog) => <BlogTile key={blog.name} blog={blog} />)
         )}
       </div>
     </Container>

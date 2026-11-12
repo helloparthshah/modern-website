@@ -41,13 +41,11 @@ export default function Page() {
   }, [router.query.name]);
 
   return (
-    <Container>
-      <div className="mt-5 mb-5">
-        <Metadata metadata={metadata} />
-      </div>
-      <Container style={{ width: "85%" }}>
+    <Container className="page post">
+      <Metadata metadata={metadata} />
+      <article className="ps-card prose-card">
         <ReactMarkdown
-          className="markdown-body"
+          className="markdown-body prose"
           remarkPlugins={[remarkGfm, remarkToc, remarkFrontmatter, remarkSlug]}
           rehypePlugins={[
             rehypeHighlight,
@@ -58,7 +56,7 @@ export default function Page() {
         >
           {content}
         </ReactMarkdown>
-      </Container>
+      </article>
     </Container>
   );
 }
