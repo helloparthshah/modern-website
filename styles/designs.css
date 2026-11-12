@@ -722,16 +722,22 @@ html[data-design="sketch"] .scrollToTopBtn {
   background: var(--ps-text);
 }
 
-/* Chalk drawing layer */
-.chalk-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 150;
+/* Chalk drawing layer: tiles live in the page so they scroll natively */
+.chalk-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
   pointer-events: none;
+  z-index: 150;
 }
 
-.chalk-canvas.drawing {
-  pointer-events: auto;
+/* Only present while drawing; turns pointer input into strokes */
+.chalk-capture {
+  position: fixed;
+  inset: 0;
+  z-index: 160;
   touch-action: none;
   cursor: var(--chalk-cursor), crosshair;
 }

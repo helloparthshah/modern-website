@@ -37,6 +37,26 @@ export function drawChalkStroke(ctx, points, { color = "#f1efe6", width = 5, off
   ctx.globalAlpha = 1;
 }
 
+// One segment of chalk (from a to b), so strokes can be drawn incrementally
+// without re-stamping the start point.
+export function drawChalkSegment(ctx, a, b, { color = "#f1efe6", width = 5, offsetX = 0, offsetY = 0 } = {}) {
+  ctx.fillStyle = color;
+  const rand = mulberry32(b.seed);
+  const dx = b.x - a.x, dy = b.y - a.y;
+  const steps = Math.max(1, Math.ceil(Math.hypot(dx, dy) / 1.2));
+  for (let s = a === b ? 0 : 1; s <= steps; s++) {
+    const t = s / steps;
+    const cx = a.x + dx * t - offsetX;
+    const cy = a.y + dy * t - offsetY;
+    for (let k = 0; k < 4; k++) {
+      ctx.globalAlpha = 0.12 + rand() * 0.5;
+      const size = 0.6 + rand() * 1.4;
+      ctx.fillRect(cx + (rand() - 0.5) * width, cy + (rand() - 0.5) * width, size, size);
+    }
+  }
+  ctx.globalAlpha = 1;
+}
+
 // Smooth ink line for the non-chalk designs.
 export function drawInkStroke(ctx, points, { color = "#1c1b19", width = 2.5 } = {}) {
   if (points.length === 0) return;
