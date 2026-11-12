@@ -1,5 +1,25 @@
 [
     {
+        "title": "Kiwi: Slicing Models and Reconciling Adapters in Fault-Tolerant, Decentralized LLM Fine-Tuning",
+        "authors": [
+            "Harshil Patel",
+            "Parth Shah",
+            "Swayam Shah",
+            "Kunal Pai"
+        ],
+        "type": "poster",
+        "description": "Introduces Kiwi, a fault-tolerant system for fine-tuning LLMs across swarms of memory-constrained devices. Kiwi shards a frozen base model across workers, trains LoRA adapters on each slice and merges them peer-to-peer, so no single device needs the full model. Layer slicing matches single-GPU held-out loss, replica averaging gives a 43% wall-clock speedup on a 7-worker testbed (39% over a simulated 75 ms WAN), and frozen base weights enable instant, zero-copy recovery when a worker fails mid-run.",
+        "conference": "NeurIPS 2026 Workshop: CODEC-FM",
+        "date": "2026",
+        "tags": [
+            "Decentralized Training",
+            "LoRA",
+            "Fault Tolerance",
+            "LLMs"
+        ],
+        "link": "https://openreview.net/forum?id=wOg6YrFgbA"
+    },
+    {
         "title": "NAAMSE: Evolutionary Security Evaluation Framework for Agents",
         "authors": [
             "Parth Shah",

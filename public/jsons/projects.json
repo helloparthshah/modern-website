@@ -3,7 +3,7 @@
         "title": "NAAMSE",
         "start": "Jan 2026",
         "end": "Present",
-        "description": "Engineered the scalable core infrastructure for an evolutionary AI red-teaming framework and fuzzer, optimizing high-throughput execution pipelines for adversarial prompt injection. Architected data systems to support real-time attack mutation using genetic algorithms. Won 2nd place out of 1,500+ submissions at the Berkeley RDI AgentX competition; framework later forked by Mozilla's 0din team.",
+        "description": "Built the core of an evolutionary AI red-teaming framework that uses genetic algorithms to mutate prompt-injection attacks.\n2nd place out of 1,500+ submissions at Berkeley RDI's AgentX competition. Later forked by Mozilla's 0din team.",
         "skills": [
             "Python",
             "Agentic AI",
@@ -22,7 +22,7 @@
         "title": "HASHIRU",
         "start": "Jan 2026",
         "end": "March 2026",
-        "description": "Architected a budget-aware multi-agent orchestration framework (Hierarchical Agent System for Hybrid Intelligent Resource Utilization) enabling highly distributed workload management. Built robust cost-optimization controls to strictly manage resource compute constraints, inference expenses, and token budgeting across parallel LLM agent execution streams.",
+        "description": "Built a budget-aware multi-agent framework where a 'CEO' agent manages specialized 'employee' agents.\nKeeps compute, inference cost and token usage within budget across parallel agents.",
         "skills": [
             "Python",
             "LangGraph",
@@ -45,7 +45,7 @@
         "title": "gem5 Vision",
         "start": "Jan 2023",
         "end": "June 2023",
-        "description": "Engineered advanced search functionality and a comprehensive categorization system for the gem5 Resource Infrastructure, enhancing resource discovery for computer architecture researchers. Architected extensible database integrations to support diverse storage and retrieval options, providing developers with robust tools for managing simulator resources.",
+        "description": "Built search and categorization for the gem5 Resources site, making simulator resources easier to find.\nAdded support for multiple database backends for storing and serving resources.",
         "skills": [
             "NextJS",
             "ReactJS",
@@ -64,7 +64,7 @@
         "title": "QuixFolio",
         "start": "March 2023",
         "end": "April 2023",
-        "description": "An open-source, automated portfolio builder that allows users to deploy professional portfolios to GitHub Pages in minutes. Developed a template-driven engine that achieved over 1,000 page views in its first week of alpha launch.",
+        "description": "Open-source portfolio builder that deploys your portfolio to GitHub Pages in minutes.\n1,000+ page views in the first week of the alpha.",
         "skills": [
             "ReactJS",
             "NextJS",
@@ -82,7 +82,7 @@
         "title": "Stadia Wireless",
         "start": "June 2022",
         "end": "July 2022",
-        "description": "Reverse-engineered and bypassed Google Stadia Controller hardware constraints, implementing a websocket-based architecture to enable universal wireless connectivity. Accumulated 450+ stars on GitHub and featured in major publications including The Verge and Ars Technica.",
+        "description": "Made the Google Stadia controller work wirelessly on any device using WebSockets.\n450+ GitHub stars, covered by The Verge and Ars Technica.",
         "skills": [
             "Python",
             "JavaScript",
@@ -99,7 +99,7 @@
         "title": "VeggieBuddie",
         "start": "Jan 2020",
         "end": "Jan 2020",
-        "description": "A diet-restriction assistant app that identifies safe-to-eat products by scanning ingredient images. Awarded 'Most Social Good Hack' at HackDavis and selected as a Top 20 global solution in the Google Solution Challenge.",
+        "description": "App that scans ingredient labels to tell you if a product fits your diet.\nMost Social Good Hack at HackDavis and a Top 20 Google Solution Challenge pick.",
         "skills": [
             "Flutter",
             "Firebase",
@@ -116,7 +116,7 @@
         "title": "Other Projects",
         "start": "Oct 4, 2001",
         "end": "Present",
-        "description": "A dynamically curated list of my other open-source contributions and technical experiments.",
+        "description": "Everything else I've built and open-sourced.",
         "skills": [],
         "links": {
             "Website": "https://helloparthshah.github.io/",

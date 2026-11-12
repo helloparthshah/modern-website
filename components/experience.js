@@ -1,105 +1,99 @@
-import { Row, Col, Button, Badge } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import SectionTitle from "./sectionTitle";
+import useReveal from "./reveal";
 
-export default function Experience({ jsonExperiences, title, isExperience }) {
-    return (
-        <div className="mt-5">
-            <h1 className="mb-3" id={title.toLowerCase().replace(' ', '-')}>
-                {title}
-            </h1>
-            {
-                jsonExperiences.map((experience, index) => {
-                    return (
-                        <ExperienceTile key={index} experience={experience} isExperience={isExperience} />
-                    )
-                })
-            }
-        </div>
-    )
+function bullets(description) {
+    return description ? description.split('\n').filter(Boolean) : [];
 }
 
-function ExperienceTile({ isExperience, experience }) {
-    const ref = useRef(null);
-    useEffect(() => {
-        gsap.from(ref.current, {
-            y: 24,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'ease',
-            scrollTrigger: {
-                trigger: ref.current,
-                start: 'top 80%',
-            },
-        });
-    }, []);
-
+export default function Experience({ jsonExperiences, title, isExperience }) {
+    const id = title.toLowerCase().replace(' ', '-');
     return (
-        <Row className="mb-3 p-2 experience" ref={ref}>
-            <Col className="d-flex align-items-center justify-content-center flex-column text-center">
-                <Row style={{ width: isExperience ? '100px' : "100%", height: isExperience ? '100px' : "300px" }}>
-                    <div style={{ position: 'relative' }}>
-                        <Image src={experience.image ?? "/images/placeholder.png"}
-                            fill
-                            style={{
-                                borderRadius: isExperience ? '50%' : "10px",
-                                objectFit: 'cover',
-                            }}
-                            alt={experience.organization}
-                        />
-                    </div>
+        <div>
+            <SectionTitle id={id}>{title}</SectionTitle>
+            {isExperience ? (
+                <div className="timeline">
+                    {jsonExperiences.map((experience, index) => (
+                        <TimelineItem key={index} experience={experience} />
+                    ))}
+                </div>
+            ) : (
+                <Row xs={1} md={2} className="g-4">
+                    {jsonExperiences.map((project, index) => (
+                        <Col key={index}>
+                            <ProjectCard project={project} />
+                        </Col>
+                    ))}
                 </Row>
-                <Row>
-                    <h6>{experience.organization}</h6>
-                </Row>
-            </Col>
-            <Col className="d-flex align-items-center justify-content-center flex-column">
-                <Row>
+            )}
+        </div>
+    );
+}
+
+function TimelineItem({ experience }) {
+    const ref = useReveal();
+    return (
+        <div className="timeline-item" ref={ref}>
+            <div className="timeline-logo">
+                <Image src={experience.image ?? "/images/placeholder.png"}
+                    fill sizes="56px" style={{ objectFit: 'cover' }}
+                    alt={experience.organization} />
+            </div>
+            <div className="ps-card timeline-card">
+                <div className="timeline-head">
                     <h5>{experience.title}</h5>
-                </Row>
-                <Row className="mb-2 text-muted">
-                    {experience.start} - {experience.end}
-                </Row>
-                <Row className="mb-2 text-muted">
-                    {experience.location}
-                </Row>
-                <Row>
-                    <h6 className="text-center">
-                        {
-                            experience.skills ? experience.skills.map((skill, index) => {
-                                return (
-                                    <Badge key={index} bg="secondary" className="me-1">
-                                        {skill}
-                                    </Badge>
-                                );
-                            }
-                            ) : null
-                        }
-                    </h6>
-                </Row>
-                <Row className="gap-2">
-                    {
-                        experience.links ? Object.keys(experience.links).map((key, index) => {
-                            return (
-                                <Button key={index} variant="outline-secondary" href={experience.links[key]} target="_blank">{key}</Button>
-                            );
-                        }
-                        ) : null
-                    }
-                </Row>
-            </Col>
-            <Col className="d-flex justify-content-center flex-column">
-                <ul>
-                    {experience.description != "" ? experience.description.split('\n').map((line, index) => {
-                        return (
-                            <li key={index}>{line}</li>
-                        );
-                    }) : "In progress"}
+                    <span className="timeline-date">{experience.start} - {experience.end}</span>
+                </div>
+                <div className="ps-muted">
+                    {experience.organization} · {experience.location}
+                </div>
+                <ul className="ps-bullets">
+                    {bullets(experience.description).map((line, index) => (
+                        <li key={index}>{line}</li>
+                    ))}
                 </ul>
-            </Col>
-        </Row>
+            </div>
+        </div>
+    );
+}
+
+function ProjectCard({ project }) {
+    const ref = useReveal();
+    const links = project.links ? Object.entries(project.links) : [];
+    return (
+        <div className="ps-card project-card" ref={ref}>
+            <div className="project-image">
+                <Image src={project.image ?? "/images/placeholder.png"}
+                    fill sizes="(max-width: 768px) 100vw, 520px"
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
+                    alt={project.title} />
+            </div>
+            <div className="project-body">
+                <div className="timeline-head mb-1">
+                    <h5 className="mb-0">{project.title}</h5>
+                    <span className="timeline-date">{project.start} - {project.end}</span>
+                </div>
+                <ul className="ps-bullets mb-2">
+                    {bullets(project.description).map((line, index) => (
+                        <li key={index}>{line}</li>
+                    ))}
+                </ul>
+                {project.skills && project.skills.length > 0 && (
+                    <div>
+                        {project.skills.map((skill, index) => (
+                            <span key={index} className="ps-chip">{skill}</span>
+                        ))}
+                    </div>
+                )}
+                {links.length > 0 && (
+                    <div className="project-links">
+                        {links.map(([name, href]) => (
+                            <a key={name} href={href} target="_blank" rel="noreferrer">{name} ↗</a>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </div>
     );
 }

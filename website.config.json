@@ -1,7 +1,7 @@
 {
     "email": "helloparthshah+contact@gmail.com",
     "name": "Parth Shah",
-    "intro": "I am Parth Shah, a Software Development Engineer 2 (SDE 2) at Amazon specializing in infrastructure and agentic systems. Currently, I lead a cross-org effort to automate ticket investigation with AI agents, and I engineer core components for Amazon's agent-first global 'World Catalog' and Progressive GenAI Listing Experience. I am the co-creator of the NAAMSE and HASHIRU AI frameworks, focusing on evolutionary security evaluation and budget-aware multi-agent orchestration. With a B.S. in Computer Science and Engineering from UC Davis, my expertise spans Large Language Models (LLMs), scalable cloud architecture, and open-source systems.",
+    "intro": "I'm a Software Development Engineer 2 at Amazon, working on agentic systems and infrastructure. Right now I'm leading a cross-org effort to automate ticket investigation with AI agents, and building core pieces of World Catalog, Amazon's agent-first global catalog. Outside work, I co-created NAAMSE and HASHIRU, two open-source frameworks for AI red-teaming and budget-aware multi-agent orchestration. I studied Computer Science and Engineering at UC Davis.",
     "image": "/images/parth.jpeg",
     "footerLinks": {
         "GitHub": "https://github.com/helloparthshah",

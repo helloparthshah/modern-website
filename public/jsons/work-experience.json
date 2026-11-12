@@ -4,7 +4,7 @@
         "organization": "Amazon",
         "start": "July 2023",
         "end": "Ongoing",
-        "description": "Own a cross-org initiative automating operational ticket investigation with AI agents, built on three layers: an operational memory that clusters past tickets by symptom and root cause to generate agentic skills from SOPs, a semantic code graph that makes codebases agent-friendly, and a knowledge layer of wikis, code reviews, and design docs.\nValidated generated skills against a holdout set with an actor–critic loop, reaching 90% accuracy on holdout tickets; skills are discovered dynamically at runtime across teams. Live for 3 teams (30+ engineers) and expanding to multiple orgs, cutting root-cause time from 30–60 minutes to ~10 minutes across 1,200+ tickets a year.\nSpearheaded the infrastructure for World Catalog, Amazon's pioneering agent-first global catalog. Engineered data systems to ingest and harmonize products beyond the Amazon ecosystem, powering next-generation AI search tools.\nArchitected the Progressive Listing Experience (PLE), integrating LLMs to autonomously scrape and map external seller URLs to the complex Amazon catalog schema, drastically reducing seller onboarding friction.\nLed a ground-up architecture rewrite of the catalog contribution ingestion pipeline to support asynchronous LLM workflows and improve end-to-end traceability and security, while overhauling the CI/CD infrastructure to reduce build times by over 80%.\nDesigned and launched 3 net-new microservices utilizing a highly extensible plugin architecture for catalog data validation, creating an execution engine with over 200 custom rules for marketplace translation and image enrichment.",
+        "description": "Leading a cross-org effort to automate ticket investigation with AI agents. Live for 3 teams (30+ engineers) with 90% accuracy on holdout tickets, cutting root-cause time from 30-60 min to ~10 min across 1,200+ tickets a year.\nBuilt the agents' context from three layers: operational memory (past tickets clustered into reusable skills), a semantic code graph, and a knowledge layer of wikis, code reviews and design docs.\nBuilt core infrastructure for World Catalog, Amazon's agent-first global catalog that brings in products from outside Amazon for AI search.\nArchitected the Progressive Listing Experience, using LLMs to turn a seller's product URL into an Amazon listing.\nRewrote the catalog ingestion pipeline for async LLM workflows and cut CI/CD build times by 80%+.\nLaunched 3 microservices with a plugin-based rules engine running 200+ rules for data validation and image enrichment.",
         "location": "Sunnyvale, CA",
         "image": "/images/amazon.gif"
     },
@@ -13,7 +13,7 @@
         "organization": "Amazon",
         "start": "June 2022",
         "end": "Sep 2022",
-        "description": "Engineered a custom Code Analyzer to automate bug detection and enforce strict coding standards, directly improving organizational code quality and reducing operational burden.\nSuccessfully championed the tool's integration into the CI/CD pipelines of 8 distinct teams, achieving widespread adoption by over 100 active engineers.\nArchitected and deployed scalable, secure serverless microservices for the Item Pipeline utilizing Java, TypeScript, AWS Lambda, Amazon SNS, and VPCs.",
+        "description": "Built a Code Analyzer that catches bugs and enforces coding standards before deployment.\nRolled it out to the CI/CD pipelines of 8 teams, used by 100+ engineers.\nBuilt serverless microservices for the Item Pipeline with Java, TypeScript, Lambda and SNS.",
         "location": "Sunnyvale, CA",
         "image": "/images/amazon.gif"
     },
@@ -22,7 +22,7 @@
         "organization": "Opal, LLC.",
         "start": "Sep 2021",
         "end": "June 2022",
-        "description": "Engineered a scalable online NFT marketplace utilizing Flask, Django, and React.js.\nSpearheaded the Social Media team, leading the end-to-end development of an interactive platform for user engagement and digital asset sharing.",
+        "description": "Built an NFT marketplace with Flask, Django and React.\nLed the social media team, building a platform for users to share digital assets.",
         "location": "Remote",
         "image": "/images/opal.jpeg"
     },
@@ -31,7 +31,7 @@
         "organization": "Google Developer Student Club, UC Davis",
         "start": "February 2020",
         "end": "July 2022",
-        "description": "Architected the official GDSC UC Davis website using dynamic JavaScript, HTML, and CSS.\nCollaborated on the development of a student-led Kotlin Android development curriculum.",
+        "description": "Built the GDSC UC Davis website.\nHelped create a student-led Kotlin Android curriculum.",
         "location": "Davis, CA",
         "image": "/images/gdsc.webp"
     },
@@ -40,7 +40,7 @@
         "organization": "Bit Project",
         "start": "Oct 2019",
         "end": "Feb 2020",
-        "description": "Partnered with engineering teams at MongoDB, Pusher, and Twitter to develop and deliver technical workshops to 50+ attendees.\nAuthored comprehensive technical tutorials focusing on the MERN stack and complex API integrations.",
+        "description": "Ran technical workshops for 50+ attendees alongside MongoDB, Pusher and Twitter.\nWrote tutorials on the MERN stack and API integrations.",
         "location": "Davis, CA",
         "image": "/images/bit.png"
     },
@@ -49,7 +49,7 @@
         "organization": "Niyantras",
         "start": "May 2019",
         "end": "Aug 2020",
-        "description": "Engineered a cost-effective, BLE-based IoT solution by integrating Raspberry Pi modules with a custom mobile application for real-time hardware interaction.",
+        "description": "Built a low-cost BLE IoT system using a Raspberry Pi and a companion mobile app.",
         "location": "Vadodara, IN",
         "image": "/images/niyantras.png"
     }
