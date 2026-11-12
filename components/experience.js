@@ -31,8 +31,11 @@ export default function Experience({ jsonExperiences, title, isExperience }) {
     );
 }
 
+// An entry is either a single role ({ title, start, end, description }) or a
+// company with several roles ({ organization, roles: [...] }), e.g. after a promotion.
 function TimelineItem({ experience }) {
     const ref = useReveal();
+    const roles = experience.roles;
     return (
         <div className="timeline-item" ref={ref}>
             <div className="timeline-logo">
@@ -41,20 +44,54 @@ function TimelineItem({ experience }) {
                     alt={experience.organization} />
             </div>
             <div className="ps-card timeline-card">
-                <div className="timeline-head">
-                    <h5>{experience.title}</h5>
-                    <span className="timeline-date">{experience.start} - {experience.end}</span>
-                </div>
-                <div className="ps-muted">
-                    {experience.organization} · {experience.location}
-                </div>
-                <ul className="ps-bullets">
-                    {bullets(experience.description).map((line, index) => (
-                        <li key={index}>{line}</li>
-                    ))}
-                </ul>
+                {roles ? (
+                    <>
+                        <div className="timeline-head">
+                            <h5>{experience.organization}</h5>
+                            <span className="timeline-date">
+                                {roles[roles.length - 1].start} - {roles[0].end}
+                            </span>
+                        </div>
+                        <div className="ps-muted">{experience.location}</div>
+                        <div className="role-list">
+                            {roles.map((role, index) => (
+                                <div className="role" key={index}>
+                                    <div className="timeline-head">
+                                        <h6>{role.title}</h6>
+                                        <span className="timeline-date">{role.start} - {role.end}</span>
+                                    </div>
+                                    {role.location && role.location !== experience.location && (
+                                        <div className="ps-muted small">{role.location}</div>
+                                    )}
+                                    <Bullets description={role.description} />
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className="timeline-head">
+                            <h5>{experience.title}</h5>
+                            <span className="timeline-date">{experience.start} - {experience.end}</span>
+                        </div>
+                        <div className="ps-muted">
+                            {experience.organization} · {experience.location}
+                        </div>
+                        <Bullets description={experience.description} />
+                    </>
+                )}
             </div>
         </div>
+    );
+}
+
+function Bullets({ description }) {
+    return (
+        <ul className="ps-bullets">
+            {bullets(description).map((line, index) => (
+                <li key={index}>{line}</li>
+            ))}
+        </ul>
     );
 }
 

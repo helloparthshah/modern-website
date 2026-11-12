@@ -718,3 +718,46 @@ html[data-bs-theme="dark"] .timeline-logo {
   border-color: rgba(255, 255, 255, 0.22);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
 }
+
+/* Several roles at one company (promotions) */
+.role-list {
+  margin-top: 0.9rem;
+}
+
+.role {
+  position: relative;
+  padding-left: 1.4rem;
+  padding-bottom: 1rem;
+}
+
+.role:last-child {
+  padding-bottom: 0;
+}
+
+.role::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ps-accent);
+  box-shadow: 0 0 0 4px var(--ps-accent-soft);
+}
+
+.role:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1.3rem;
+  bottom: 0.2rem;
+  width: 2px;
+  background: var(--ps-border);
+}
+
+.role h6 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}

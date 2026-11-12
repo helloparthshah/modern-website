@@ -1,21 +1,28 @@
 [
     {
-        "title": "Software Development Engineer 2 (SDE 2)",
         "organization": "Amazon",
-        "start": "July 2023",
-        "end": "Ongoing",
-        "description": "Leading a cross-org effort to automate ticket investigation with AI agents. Live for 3 teams (30+ engineers) with 90% accuracy on holdout tickets, cutting root-cause time from 30-60 min to ~10 min across 1,200+ tickets a year.\nBuilt the agents' context from three layers: operational memory (past tickets clustered into reusable skills), a semantic code graph, and a knowledge layer of wikis, code reviews and design docs.\nBuilt core infrastructure for World Catalog, Amazon's agent-first global catalog that brings in products from outside Amazon for AI search.\nArchitected the Progressive Listing Experience, using LLMs to turn a seller's product URL into an Amazon listing.\nRewrote the catalog ingestion pipeline for async LLM workflows and cut CI/CD build times by 80%+.\nLaunched 3 microservices with a plugin-based rules engine running 200+ rules for data validation and image enrichment.",
         "location": "Sunnyvale, CA",
-        "image": "/images/amazon.gif"
-    },
-    {
-        "title": "SDE Intern, Item Pipeline",
-        "organization": "Amazon",
-        "start": "June 2022",
-        "end": "Sep 2022",
-        "description": "Built a Code Analyzer that catches bugs and enforces coding standards before deployment.\nRolled it out to the CI/CD pipelines of 8 teams, used by 100+ engineers.\nBuilt serverless microservices for the Item Pipeline with Java, TypeScript, Lambda and SNS.",
-        "location": "Sunnyvale, CA",
-        "image": "/images/amazon.gif"
+        "image": "/images/amazon.gif",
+        "roles": [
+            {
+                "title": "Software Development Engineer 2",
+                "start": "April 2025",
+                "end": "Present",
+                "description": "Leading a cross-org effort to automate ticket investigation with AI agents. Live for 3 teams (30+ engineers) with 90% accuracy on holdout tickets, cutting root-cause time from 30-60 min to ~10 min across 1,200+ tickets a year.\nBuilt the agents' context from three layers: operational memory (past tickets clustered into reusable skills), a semantic code graph, and a knowledge layer of wikis, code reviews and design docs.\nBuilt core infrastructure for World Catalog, Amazon's agent-first global catalog that brings in products from outside Amazon for AI search."
+            },
+            {
+                "title": "Software Development Engineer 1",
+                "start": "July 2023",
+                "end": "April 2025",
+                "description": "Architected the Progressive Listing Experience, using LLMs to turn a seller's product URL into an Amazon listing.\nRewrote the catalog ingestion pipeline for async LLM workflows and cut CI/CD build times by 80%+.\nLaunched 3 microservices with a plugin-based rules engine running 200+ rules for data validation and image enrichment."
+            },
+            {
+                "title": "SDE Intern, Item Pipeline",
+                "start": "June 2022",
+                "end": "Sep 2022",
+                "description": "Built a Code Analyzer that catches bugs and enforces coding standards before deployment.\nRolled it out to the CI/CD pipelines of 8 teams, used by 100+ engineers.\nBuilt serverless microservices for the Item Pipeline with Java, TypeScript, Lambda and SNS."
+            }
+        ]
     },
     {
         "title": "Junior Developer",
