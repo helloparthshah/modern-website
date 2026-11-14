@@ -61,6 +61,25 @@
         "image": "/images/hashiru.png"
     },
     {
+        "title": "Rubato",
+        "start": "Nov 2026",
+        "end": "Present",
+        "description": "Built a real-time chord recognizer that runs entirely in the browser: a streaming CNN + Transformer names 108 chords from live audio every 40 ms.\nTrained on Billboard and Bollywood songs, reaching 83.4% major/minor accuracy on generated chord sheets, with smoothing that adds no latency.",
+        "skills": [
+            "Python",
+            "PyTorch",
+            "ONNX",
+            "WebGPU",
+            "Web Audio",
+            "Transformers"
+        ],
+        "links": {
+            "Live": "https://helloparthshah.github.io/rubato/",
+            "GitHub": "https://github.com/helloparthshah/rubato"
+        },
+        "image": "/images/rubato.jpg"
+    },
+    {
         "title": "Stadia Wireless",
         "start": "June 2022",
         "end": "July 2022",
