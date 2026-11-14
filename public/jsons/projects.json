@@ -1,23 +1,5 @@
 [
     {
-        "title": "Kiwi",
-        "start": "July 2026",
-        "end": "Oct 2026",
-        "description": "Built Kiwi's decentralized inference engine, which splits an LLM across a swarm of small machines and streams activations between them peer-to-peer over libp2p.\nHandles machines joining and dropping out with VRAM-aware layer assignment, heartbeat-based eviction, rerouting and paged KV cache management.\nBuilt decentralized LoRA fine-tuning on top of it as part of the team: 43% faster on 7 workers with instant recovery when a worker drops. Published at the NeurIPS 2026 CODEC-FM workshop.",
-        "skills": [
-            "Python",
-            "PyTorch",
-            "libp2p",
-            "FastAPI",
-            "LoRA",
-            "Docker"
-        ],
-        "links": {
-            "Paper": "https://openreview.net/forum?id=wOg6YrFgbA"
-        },
-        "image": "/images/kiwi.png"
-    },
-    {
         "title": "NAAMSE",
         "start": "Jan 2026",
         "end": "Present",
@@ -36,6 +18,24 @@
             "GitHub": "https://github.com/HASHIRU-AI/NAAMSE"
         },
         "image": "/images/naamse.png"
+    },
+    {
+        "title": "Kiwi",
+        "start": "July 2026",
+        "end": "Oct 2026",
+        "description": "Built Kiwi's decentralized inference engine, which splits an LLM across a swarm of small machines and streams activations between them peer-to-peer over libp2p.\nHandles machines joining and dropping out with VRAM-aware layer assignment, heartbeat-based eviction, rerouting and paged KV cache management.\nBuilt decentralized LoRA fine-tuning on top of it as part of the team: 43% faster on 7 workers with instant recovery when a worker drops. Published at the NeurIPS 2026 CODEC-FM workshop.",
+        "skills": [
+            "Python",
+            "PyTorch",
+            "libp2p",
+            "FastAPI",
+            "LoRA",
+            "Docker"
+        ],
+        "links": {
+            "Paper": "https://openreview.net/forum?id=wOg6YrFgbA"
+        },
+        "image": "/images/kiwi.png"
     },
     {
         "title": "HASHIRU",
@@ -61,43 +61,6 @@
         "image": "/images/hashiru.png"
     },
     {
-        "title": "gem5 Vision",
-        "start": "Jan 2023",
-        "end": "June 2023",
-        "description": "Built search and categorization for the gem5 Resources site, making simulator resources easier to find.\nAdded support for multiple database backends for storing and serving resources.",
-        "skills": [
-            "NextJS",
-            "ReactJS",
-            "MongoDB",
-            "JSON Schema",
-            "Python"
-        ],
-        "links": {
-            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
-            "GitHub": "https://github.com/gem5/gem5-resources",
-            "Demo": "https://resources.gem5.org/"
-        },
-        "image": "/images/gem5.webp"
-    },
-    {
-        "title": "QuixFolio",
-        "start": "March 2023",
-        "end": "April 2023",
-        "description": "Open-source portfolio builder that deploys your portfolio to GitHub Pages in minutes.\n1,000+ page views in the first week of the alpha.",
-        "skills": [
-            "ReactJS",
-            "NextJS",
-            "Material UI",
-            "GitHub Pages",
-            "GitHub Actions"
-        ],
-        "links": {
-            "GitHub": "https://github.com/quixfolio/quixfolio",
-            "Demo": "https://quixfolio.vercel.app/"
-        },
-        "image": "/images/QuixFolio.png"
-    },
-    {
         "title": "Stadia Wireless",
         "start": "June 2022",
         "end": "July 2022",
@@ -115,21 +78,23 @@
         "image": "/images/stadia.png"
     },
     {
-        "title": "VeggieBuddie",
-        "start": "Jan 2020",
-        "end": "Jan 2020",
-        "description": "App that scans ingredient labels to tell you if a product fits your diet.\nMost Social Good Hack at HackDavis and a Top 20 Google Solution Challenge pick.",
+        "title": "gem5 Vision",
+        "start": "Jan 2023",
+        "end": "June 2023",
+        "description": "Built search and categorization for the gem5 Resources site, making simulator resources easier to find.\nAdded support for multiple database backends for storing and serving resources.",
         "skills": [
-            "Flutter",
-            "Firebase",
-            "Google Cloud Platform",
-            "Dart"
+            "NextJS",
+            "ReactJS",
+            "MongoDB",
+            "JSON Schema",
+            "Python"
         ],
         "links": {
-            "GitHub": "https://github.com/helloparthshah/VeggieBuddie",
-            "Play Store": "https://play.google.com/store/apps/details?id=com.veggiebuddie"
+            "Poster": "https://www.gem5.org/assets/files/workshop-isca-2023/posters/gem5-vision-poster.pdf",
+            "GitHub": "https://github.com/gem5/gem5-resources",
+            "Demo": "https://resources.gem5.org/"
         },
-        "image": "/images/veggie.webp"
+        "image": "/images/gem5.webp"
     },
     {
         "title": "Other Projects",
