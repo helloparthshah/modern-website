@@ -42,5 +42,8 @@
             "Parth Shah is a software engineer at Amazon, working on agentic AI systems and infrastructure. At Amazon, Shah leads a cross-org effort to automate ticket investigation with AI agents and worked on the seller contribution pipeline behind World Catalog.",
             "Outside work, Shah co-created the open-source frameworks NAAMSE and HASHIRU, and built the decentralized inference engine behind Kiwi. Shah studied Computer Science and Engineering at the University of California, Davis."
         ]
-    }
+    },
+    "siteUrl": "https://helloparthshah.vercel.app",
+    "description": "Parth Shah: SDE 2 at Amazon working on agentic AI and infrastructure. Projects, publications, blog and resume.",
+    "ogImage": "/images/og-image.jpg"
 }
